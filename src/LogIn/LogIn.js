@@ -4,6 +4,7 @@
  * */
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 /* *
  * Código de librerías internas
  * */ 
@@ -15,6 +16,10 @@ import './LogIn.css';
 
 class LogIn extends Component {
     render() {
+        const buttonUnique = { 
+            display: 'block',
+            margin: '0em auto'
+        };
         return (
             <section>
                 <header>
@@ -35,6 +40,9 @@ class LogIn extends Component {
                         margin="normal"
                         className="textField"
                     />
+                    <Button color="primary" style={ buttonUnique }>
+                        Ingresar
+                    </Button>
                     Ingresá tus credenciales para comenzar.
                 </main>
                 <footer>
