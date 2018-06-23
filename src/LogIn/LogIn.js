@@ -5,6 +5,7 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 /* *
  * Código de librerías internas
  * */ 
@@ -40,9 +41,13 @@ class LogIn extends Component {
                         margin="normal"
                         className="textField"
                     />
+                    <Link
+                        to="/main"
+                    >
                     <Button color="primary" style={ buttonUnique }>
                         Ingresar
                     </Button>
+                    </Link>
                     Ingresá tus credenciales para comenzar.
                 </main>
                 <footer>
