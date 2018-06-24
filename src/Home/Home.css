@@ -16,7 +16,20 @@
     width: -moz-fit-content;
     width: fit-content;
 }
-
+.arms-anim-obj {
+    background: -webkit-radial-gradient(100px 100px, circle, red, orange);
+    background: -o-radial-gradient(100px 100px, circle, red, orange);
+    background: radial-gradient(circle at 100px 100px, red, orange);
+    width: 30px;
+    height: 60px;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    margin-left: 7rem;
+    /* border-radius: 50%; */
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border: 3px solid black;
+}
 .arms-anim-bot {
     width: 28px;
     height: 75px;
@@ -39,34 +52,63 @@
     display: inline-flex;
     margin: 0rem auto;
     border-radius: 1rem;
-    -webkit-transform: rotate(110deg) translate(1em, -3.4em);
-    -ms-transform: rotate(110deg) translate(1em, -3.4em);
-    transform: rotate(110deg) translate(1em, -3.4em);
+    -webkit-transform: rotate(80deg) translate(1em, -3.4em);
+    -ms-transform: rotate(80deg) translate(1em, -3.4em);
+    transform: rotate(80deg) translate(1em, -3.4em);
     border: 4px solid black;
     display: block;
 }
 
+
 @keyframes move {
     
     0% {  
-        transform: rotate(130deg) translate(1em, -3.4em);
+        transform: rotate(160deg) translate(1em, -3.4em);
     }
     25% {  
-        transform: rotate(110deg) translate(1em, -3.4em);
+        transform: rotate(140deg) translate(1em, -3.4em);
     }
     50% {  
+        transform: rotate(120deg) translate(1em, -3.4em);
+    }
+
+    75% {  
+        transform: rotate(100deg) translate(1em, -3.4em);
+    }
+
+    100% {  
         transform: rotate(90deg) translate(1em, -3.4em);
     }
-    100% {  
-        transform: rotate(70deg) translate(1em, -3.4em);
+}
+
+@keyframes moveArm {
+    0% {
+        transform: rotate(-1deg) translate(0.5em);
+    }
+
+    25% {
+        transform: rotate(-3deg) translate(1em);
+    }
+
+    75% {
+        transform: rotate(-4deg) translate(2em);
+    }
+
+    100% {
+        transform: rotate(-5deg) translate(2.5em);
     }
 }
+
+.arms-anim-bot {
+    animation: moveArm 1s ease;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
 .arms-anim-bot:before {
-    -webkit-animation: move 1.5s ease alternate infinite;
-    -moz-animation: move 1.5s ease alternate infinite;
-    -ms-animation: move 1.5s ease alternate infinite;
-    -o-animation: move 1.5s ease alternate infinite;
-    animation: move 1.5s ease alternate infinite;
+    animation: move 1.5s ease;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
 }
 
 .home-title {

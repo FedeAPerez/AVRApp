@@ -19,9 +19,9 @@ class Home extends Component {
             <main className="home-main">
                 <header>
                     <div className="arms-anim-container">
-                        <span className="arms-anim-sup">
-                        </span>
                         <span className="arms-anim-bot">
+                        </span>
+                        <span className="arms-anim-obj">
                         </span>
                     </div>
                     <h1 className="home-title">
