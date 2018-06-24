@@ -18,8 +18,14 @@ class Home extends Component {
         return (
             <main className="home-main">
                 <header>
+                    <div className="arms-anim-container">
+                        <span className="arms-anim-sup">
+                        </span>
+                        <span className="arms-anim-bot">
+                        </span>
+                    </div>
                     <h1 className="home-title">
-                    ATAXIA VISION
+                    AV
                     </h1>
                 </header>
                 <footer>
