@@ -19,6 +19,9 @@ import WelcomeContainer from './WelcomeContainer';
 import './AdminView.css';
 const keyMap = {
     'welcome' : WelcomeContainer,
+    'settings' : WelcomeContainer,
+    'patients': WelcomeContainer,
+    'stats': WelcomeContainer
 };
 
 class AdminView extends Component {

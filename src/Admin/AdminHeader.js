@@ -17,23 +17,23 @@ const __BUSINESS_HEADER_NAV_CLASS = "admin-business-header-nav-container";
 const __BUSINESS_HEADER_CLASS_LINK = "admin-business-header-link";
 const __BUSINESS_HEADER_TEXT_IMAGE = "admin-business-header-text";
 // Images
-const __BUSINESS_HEADER_HOME_IMAGE = "/content/images/HomeButton.svg";
-const SETTINGS_IMAGE = "/content/images/SettingsButton.svg";
-const SETTINGS_IMAGE_SELECTED = "/content/images/SettingsButtonSelected.svg";
+const HOME = "/content/images/actions/home.svg";
+const SETTINGS_IMAGE = "/content/images/actions/settings.svg";
+const SETTINGS_IMAGE_ACTIVE = "/content/images/actions/settings_active.svg";
 const SEARCH_IMAGE = "/content/images/actions/search.svg";
 const SEARCH_IMAGE_ACTIVE = "/content/images/actions/search_active.svg";
-const EVENT_IMAGE = "/content/images/actions/event.svg";
-const EVENT_IMAGE_ACTIVE = "/content/images/actions/event_orange.svg";
-const __BUSINESS_HEADER_MESSAGES_IMAGE = "/content/images/MessagesButton.svg";
-const __BUSINESS_HEADER_MESSAGES_SELECTED_IMAGE = "/content/images/MessagesButtonSelected.svg";
+const STATS = "/content/images/actions/stats.svg";
+const STATS_ACTIVE = "/content/images/actions/stats_active.svg";
+const PATIENT = "/content/images/actions/patient.svg";
+const PATIENT_ACTIVE = "/content/images/actions/patient_active.svg";
 
 class AdminBusinessHeader extends Component {
 	constructor(props) {
         super(props);
         this.state = {
             'userOb' : this.props.user,
-            'option_selected':'search',
-            'show_option':'Buscar'
+            'option_selected':'welcome',
+            'show_option':'Comenzar'
         };
     }
 
@@ -59,7 +59,7 @@ class AdminBusinessHeader extends Component {
                 >
                     <span 
                     >
-                        <img src={ __BUSINESS_HEADER_HOME_IMAGE } alt="header de imagen" />
+                        <img src={ HOME } alt="header de imagen" />
                     </span>
                 </Link>
                 <h2
@@ -72,34 +72,34 @@ class AdminBusinessHeader extends Component {
                     className= { __BUSINESS_HEADER_NAV_CLASS }
                 >
                     <NavigationItem 
-                        value= { "search" }
-                        isSelected= { this.state.option_selected === "search" }
+                        value= { "welcome" }
+                        isSelected= { this.state.option_selected === "welcome" }
                         defaultImage= { SEARCH_IMAGE }
                         selectedImage= { SEARCH_IMAGE_ACTIVE }
                         navigateOption= { this.navigateOption.bind(this) }
-                        showMessage= { "Buscar" }
+                        showMessage= { "Comenzar" }
                     />
                     <NavigationItem 
-                        value= { "chat" }
-                        isSelected= { this.state.option_selected === "chat" }
-                        defaultImage= { __BUSINESS_HEADER_MESSAGES_IMAGE }
-                        selectedImage= { __BUSINESS_HEADER_MESSAGES_SELECTED_IMAGE }
+                        value= { "patients" }
+                        isSelected= { this.state.option_selected === "patients" }
+                        defaultImage= { PATIENT }
+                        selectedImage= { PATIENT_ACTIVE }
                         navigateOption= { this.navigateOption.bind(this) }
-                        showMessage= { "Mensajes" }
+                        showMessage= { "Pacientes" }
                     />
                     <NavigationItem 
-                        value= { "events" }
-                        isSelected= { this.state.option_selected === "events" }
-                        defaultImage= { EVENT_IMAGE }
-                        selectedImage= { EVENT_IMAGE_ACTIVE }
+                        value= { "stats" }
+                        isSelected= { this.state.option_selected === "stats" }
+                        defaultImage= { STATS }
+                        selectedImage= { STATS_ACTIVE }
                         navigateOption= { this.navigateOption.bind(this) }
-                        showMessage= { "Eventos" }
+                        showMessage= { "Estadísticas" }
                     />
                     <NavigationItem 
                         value= { "settings" }
                         isSelected= { this.state.option_selected === "settings" }
                         defaultImage= { SETTINGS_IMAGE }
-                        selectedImage= { SETTINGS_IMAGE_SELECTED }
+                        selectedImage= { SETTINGS_IMAGE_ACTIVE }
                         navigateOption= { this.navigateOption.bind(this) }
                         showMessage= { "Configuración" }
                     />
