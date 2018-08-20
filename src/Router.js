@@ -8,6 +8,7 @@ import { Switch, Route } from 'react-router-dom';
  * Código de librerías internas
  * */ 
 import LogIn from './LogIn/LogIn';
+import SignUpView from './LogIn/SignUpView';
 import Home from './Home/Home';
 import Navigation from './Navigation/Navigation';
 /* *
@@ -19,6 +20,7 @@ class Router extends Component {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={LogIn} />
+                <Route exact path="/signup" component={SignUpView} />
                 <Route exact path="/main" component={Navigation} />
             </Switch>
         );

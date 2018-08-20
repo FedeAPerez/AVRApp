@@ -1,0 +1,30 @@
+/* MessageSubmitButton.css */
+.message-submit-button {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5em;
+    z-index: 10;
+    cursor: pointer;
+    border-radius: 1em;
+    padding: 0.7em;
+    padding-top: 0.6em;
+    vertical-align: middle;
+    text-align: center;
+}
+@media only screen and (min-width: 768px) 
+{
+    .message-submit-button { 
+        right: 1em;
+        margin-left: 2em;
+    }
+}
+
+@media only screen and (max-width: 768px) 
+{
+    .message-submit-button {         
+        margin-left: 0em;
+        border-top-left-radius: 0em;
+        border-bottom-left-radius: 0em;
+    }
+}

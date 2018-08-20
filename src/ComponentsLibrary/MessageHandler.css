@@ -1,0 +1,25 @@
+.message-div {
+    position: relative;
+    display: flex;
+}
+.message-handler-container {
+    display: block;
+ clear: both;
+ width: 100%;
+ overflow: hidden;
+ margin: 0 auto;
+ border-radius: 1em;
+ -ms-flex-negative: 0;
+ flex-shrink: 0;
+}
+.focus-div {
+    height: 5vh;
+}
+
+@media only screen and (max-width: 768px) 
+{
+    .message-handler-container {
+
+    border-radius: 0em;
+    }
+}
