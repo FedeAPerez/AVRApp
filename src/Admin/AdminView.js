@@ -12,6 +12,7 @@ import AdminHeader from './AdminHeader';
 import { fbGetUser  } from '../firebase';
 import * as Actions from '../redux/actions/actions';
 import WelcomeContainer from './WelcomeContainer';
+import StatsView from '../Stats/StatsView';
 
 /* *
  * Hojas de Estilo y Constantes
@@ -21,7 +22,7 @@ const keyMap = {
     'welcome' : WelcomeContainer,
     'settings' : WelcomeContainer,
     'patients': WelcomeContainer,
-    'stats': WelcomeContainer
+    'stats': StatsView
 };
 
 class AdminView extends Component {
