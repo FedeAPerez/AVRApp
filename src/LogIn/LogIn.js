@@ -49,8 +49,7 @@ class UserContainer extends Component {
 
                     localStorage.setItem("av_userSession", JSON.stringify({
                         user_name : userFromFBPojo.user_name,
-                        email: userFromFBPojo.email,
-                        isBusiness : userFromFBPojo.isBusiness
+                        email: userFromFBPojo.email
                     }));
                     
                     this.setState({doneAuthed : true, user_name : Object.keys(snapshot.val())[0]});

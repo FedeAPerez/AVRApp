@@ -42,6 +42,7 @@ class CreateUserContainer extends Component {
                 var user = {};
                 user.email = this.state.email;
                 user.user_name = this.state.user_name.toLowerCase();
+                user.isBusiness = this.state.isBusiness;
 
                 fbCreateUser(user);
                 
@@ -77,7 +78,17 @@ class CreateUserContainer extends Component {
         }
         return (
             <SimpleSection>
-                 <img src={"/a-v-logo.jpeg"} className="logo" /> 
+                 <img src={"/a-v-logo.jpeg"} className="logo" />
+
+                 <TextField 
+                    placeholder="Nombre de Usuario"
+                    label="Elegí tu nombre de usuario" 
+                    onChange={this.handleChangeByName("user_name")}
+                    value={this.state.user_name}
+                    fullWidth
+                    margin="normal"
+                />
+ 
                 <TextField 
                     placeholder="Mail"
                     label="Ingresá tu Mail" 

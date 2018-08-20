@@ -1,0 +1,85 @@
+.admin-business-header-container {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    z-index: 5;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    height: 3em;
+    top: 0;
+    background-color: #ffffff;
+}
+
+.admin-business-header-container h2{
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: black;
+    text-align: center;
+}
+.admin-business-header-container h2 .biggerH2{
+    font-weight: 500;
+    color: #f16334;
+}
+.admin-business-header-link {
+    float: left;
+    position: absolute;
+    margin-left: 0.5em;
+}
+.admin-business-header-text {
+    vertical-align: middle;
+    margin-left: 2em;
+}
+
+.admin-business-header-nav-container {
+        display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    clear: both;
+    position: -webkit-sticky;
+    position: sticky;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 3em;
+    box-shadow: 0px 1.5px rgb(0, 0, 0, 0.16);
+}
+.admin-business-header-nav-container span{
+    width: 33.333%;
+    display: inline-flex;
+    overflow: hidden;
+    flex-direction: row;
+    clear: both;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    height: 100%;
+}
+.admin-business-header-nav-container span img{
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    vertical-align: bottom;
+    margin: 0em auto;
+    display: inline;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.admin-navigation-item {
+    cursor: pointer;
+}
+.resalt {
+    border-bottom: 3px solid #f16334;
+}
