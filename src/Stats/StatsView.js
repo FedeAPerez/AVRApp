@@ -7,27 +7,42 @@ import React, { Component } from 'react';
  * Código de librerías internas
  * */ 
 import { SimpleSection } from '../ComponentsLibrary/Section';
-import { PatientCard } from '../ComponentsLibrary/PatientCard';
+import { SessionCard } from '../ComponentsLibrary/SessionCard';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
-class StatsView extends Component {
+
+function compareSessions(a, b) {
+    var dt1   = parseInt(a.sessionDate.substring(0,2));
+    var mon1  = parseInt(a.sessionDate.substring(3,5));
+    var yr1   = parseInt(a.sessionDate.substring(6,10));
+    var date1 = new Date(yr1, mon1-1, dt1);
+    var dt2   = parseInt(b.sessionDate.substring(0,2));
+    var mon2  = parseInt(b.sessionDate.substring(3,5));
+    var yr2  = parseInt(b.sessionDate.substring(6,10));
+    var date2 = new Date(yr2, mon2-1, dt2);
+    return date1 < date2;
+} 
+
+class PatientsView extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            patients : [
+            sessions : [
                 {
                     name : "Agustín Fernandez",
-                    age : 35,
-                    gender: 'Masculino',
-                    startDate : '12/08/2018',
-                    observations : "Mejoró el 32% de su movilidad en solo 4 sesiones."
+                    improvment: '0%',
+                    sessionDate : '12/08/2018'
                 },
                 {
-                    name : "Camila Casuscelli",
-                    age : 23,
-                    gender : "Femenino",
-                    startDate : '01/07/2016'
+                    name : "Agustín Fernandez",
+                    improvment : "2%",
+                    sessionDate : '20/09/2018'
+                },
+                {
+                    name : "Agustín Fernandez",
+                    improvment : "3%",
+                    sessionDate : '30/08/2018'
                 }
             ]
         }
@@ -37,15 +52,13 @@ class StatsView extends Component {
         return (
             <SimpleSection>
                 {
-                    this.state.patients.map((element, index) => {
+                    this.state.sessions.sort(compareSessions).map((element, index) => {
                         return ( 
-                            <PatientCard 
+                            <SessionCard 
                                     name = {element.name}
-                                    age = { element.age}
-                                    gender= {element.gender}
-                                    startDate= {element.startDate}
-                                    observations={ element.observations } 
-                                    key={"stat_patient_"+index} />
+                                    sessionDate= {element.sessionDate}
+                                    improvment={ element.improvment } 
+                                    key={"session_patient_"+index} />
                         );
                     })
                 }
@@ -54,4 +67,4 @@ class StatsView extends Component {
     }
 }
 
-export default StatsView;
+export default PatientsView;

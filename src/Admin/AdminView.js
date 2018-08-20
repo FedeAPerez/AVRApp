@@ -13,6 +13,7 @@ import { fbGetUser  } from '../firebase';
 import * as Actions from '../redux/actions/actions';
 import WelcomeContainer from './WelcomeContainer';
 import StatsView from '../Stats/StatsView';
+import  PatientsView from '../Patients/PatientsView';
 
 /* *
  * Hojas de Estilo y Constantes
@@ -21,7 +22,7 @@ import './AdminView.css';
 const keyMap = {
     'welcome' : WelcomeContainer,
     'settings' : WelcomeContainer,
-    'patients': WelcomeContainer,
+    'patients': PatientsView,
     'stats': StatsView
 };
 
