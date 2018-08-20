@@ -18,8 +18,8 @@ const __BUSINESS_HEADER_CLASS_LINK = "admin-business-header-link";
 const __BUSINESS_HEADER_TEXT_IMAGE = "admin-business-header-text";
 // Images
 const __BUSINESS_HEADER_HOME_IMAGE = "/content/images/HomeButton.svg";
-const __BUSINESS_HEADER_SETTINGS_IMAGE = "/content/images/SettingsButton.svg";
-const __BUSINESS_HEADER_SETTINGS_SELECTED_IMAGE = "/content/images/SettingsButtonSelected.svg";
+const SETTINGS_IMAGE = "/content/images/SettingsButton.svg";
+const SETTINGS_IMAGE_SELECTED = "/content/images/SettingsButtonSelected.svg";
 const SEARCH_IMAGE = "/content/images/actions/search.svg";
 const SEARCH_IMAGE_ACTIVE = "/content/images/actions/search_active.svg";
 const EVENT_IMAGE = "/content/images/actions/event.svg";
@@ -98,8 +98,8 @@ class AdminBusinessHeader extends Component {
                     <NavigationItem 
                         value= { "settings" }
                         isSelected= { this.state.option_selected === "settings" }
-                        defaultImage= { __BUSINESS_HEADER_SETTINGS_IMAGE }
-                        selectedImage= { __BUSINESS_HEADER_SETTINGS_SELECTED_IMAGE }
+                        defaultImage= { SETTINGS_IMAGE }
+                        selectedImage= { SETTINGS_IMAGE_SELECTED }
                         navigateOption= { this.navigateOption.bind(this) }
                         showMessage= { "Configuración" }
                     />
