@@ -14,14 +14,14 @@ import * as Actions from '../redux/actions/actions';
 import WelcomeContainer from './WelcomeContainer';
 import StatsView from '../Stats/StatsView';
 import  PatientsView from '../Patients/PatientsView';
-
+import SettingsView from '../Settings/SettingsView';
 /* *
  * Hojas de Estilo y Constantes
  * */
 import './AdminView.css';
 const keyMap = {
     'welcome' : WelcomeContainer,
-    'settings' : WelcomeContainer,
+    'settings' : SettingsView,
     'patients': PatientsView,
     'stats': StatsView
 };

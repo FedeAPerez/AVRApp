@@ -55,11 +55,14 @@ class UserContainer extends Component {
                     this.setState({doneAuthed : true, user_name : Object.keys(snapshot.val())[0]});
             })
             .catch((err) => {
+                console.log(err);
                 this.props.dispatch(Actions.finishedFetching());
                 this.setState({ errorLogin : true });
+
             });
           })
           .catch(error => {
+            console.log(error);
             this.props.dispatch(Actions.finishedFetching());
             this.setState({ errorLogin : true });
           });
