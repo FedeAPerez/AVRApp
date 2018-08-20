@@ -32,17 +32,71 @@ class PatientsView extends Component {
                 {
                     name : "Agustín Fernandez",
                     improvment: '0%',
-                    sessionDate : '12/08/2018'
+                    sessionDate : '15/08/2018',
+                    data : [
+                        {
+                          "id": "Agustín",
+                          "color": "hsl(51, 70%, 50%)",
+                          "data": [
+                            {
+                              "color": "hsl(45, 70%, 50%)",
+                              "x": "Día 1",
+                              "y": 0
+                            }
+                          ]
+                        }
+                    ]
                 },
                 {
                     name : "Agustín Fernandez",
                     improvment : "2%",
-                    sessionDate : '20/09/2018'
+                    sessionDate : '01/09/2018',
+                    data : [
+                        {
+                          "id": "Agustín",
+                          "color": "hsl(51, 70%, 50%)",
+                          "data": [
+                            {
+                              "color": "hsl(45, 70%, 50%)",
+                              "x": "Día 1",
+                              "y": 0
+                            },
+                            {
+                                "color": "hsl(45, 70%, 50%)",
+                                "x": "Día 2",
+                                "y": 2
+                              }
+                          ]
+                        }
+                    ]
                 },
                 {
                     name : "Agustín Fernandez",
                     improvment : "3%",
-                    sessionDate : '30/08/2018'
+                    sessionDate : '15/09/2018',
+                    data : [
+                        {
+                          "id": "Agustín",
+                          "color": "hsl(51, 70%, 50%)",
+                          "data": [
+                            {
+                              "color": "hsl(45, 70%, 50%)",
+                              "x": "Día 1",
+                              "y": 0
+                            },
+                            {
+                                "color": "hsl(45, 70%, 50%)",
+                                "x": "Día 2",
+                                "y": 2
+                              },
+                              {
+                                "color": "hsl(45, 70%, 50%)",
+                                "x": "Día 3",
+                                "y": 3
+                              }
+                          ]
+                        }
+                    ]
                 }
             ]
         }
@@ -58,6 +112,7 @@ class PatientsView extends Component {
                                     name = {element.name}
                                     sessionDate= {element.sessionDate}
                                     improvment={ element.improvment } 
+                                    data = {element.data}
                                     key={"session_patient_"+index} />
                         );
                     })

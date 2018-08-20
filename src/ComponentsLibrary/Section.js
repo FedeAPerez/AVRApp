@@ -10,6 +10,8 @@ const SimpleSection = styled.div`
     border-bottom: ${ props => props.withBottomBorders ? '1px solid #dfe6e9' : 'none'}
     position: ${ props => props.relative ? 'relative' : 'initial'};
     background-color: inherit;
+    
+    height: ${ props => props.fixed ? '200px' : '' };
     cursor: inherit;
 `;
 
