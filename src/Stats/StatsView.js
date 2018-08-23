@@ -30,7 +30,7 @@ class PatientsView extends Component {
         this.state = {
             sessions : [
                 {
-                    name : "Agustín Fernandez",
+                    name : "Agustina Fernandez",
                     improvment: '0%',
                     sessionDate : '15/08/2018',
                     data : [
@@ -53,7 +53,7 @@ class PatientsView extends Component {
                     sessionDate : '01/09/2018',
                     data : [
                         {
-                          "id": "Agustín",
+                          "id": "Agustina",
                           "color": "hsl(51, 70%, 50%)",
                           "data": [
                             {
@@ -71,12 +71,12 @@ class PatientsView extends Component {
                     ]
                 },
                 {
-                    name : "Agustín Fernandez",
-                    improvment : "3%",
+                    name : "Agustina Fernandez",
+                    improvment : "27%",
                     sessionDate : '15/09/2018',
                     data : [
                         {
-                          "id": "Agustín",
+                          "id": "Agustina",
                           "color": "hsl(51, 70%, 50%)",
                           "data": [
                             {
