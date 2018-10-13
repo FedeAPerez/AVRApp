@@ -11,7 +11,6 @@ import { connect } from 'react-redux';
 import AdminHeader from './AdminHeader';
 import { fbGetUser  } from '../firebase';
 import * as Actions from '../redux/actions/actions';
-import WelcomeContainer from './WelcomeContainer';
 import StatsView from '../Stats/StatsView';
 import  PatientsView from '../Patients/PatientsView';
 import SettingsView from '../Settings/SettingsView';
@@ -20,7 +19,6 @@ import SettingsView from '../Settings/SettingsView';
  * */
 import './AdminView.css';
 const keyMap = {
-    'welcome' : WelcomeContainer,
     'settings' : SettingsView,
     'patients': PatientsView,
     'stats': StatsView
@@ -49,7 +47,7 @@ class AdminView extends Component {
     }
 
     render() {
-        const key = this.state.selected_container || 'welcome';
+        const key = this.state.selected_container || 'patients';
         const KeySelected = keyMap[key] || keyMap.default;
         if(this.state.userOb) {
 

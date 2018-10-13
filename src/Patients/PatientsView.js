@@ -7,10 +7,13 @@ import React, { Component } from 'react';
  * Código de librerías internas
  * */ 
 import { SimpleSection } from '../ComponentsLibrary/Section';
-import { PatientCard } from '../ComponentsLibrary/PatientCard';
+import { PatientCard } from './PatientCard';
+import BeginSessionContainer from './BeginSessionContainer';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
+import './PatientCard.css';
+
 class PatientsView extends Component {
     constructor(props) {
         super(props);
@@ -49,6 +52,7 @@ class PatientsView extends Component {
                         );
                     })
                 }
+            <BeginSessionContainer />
             </SimpleSection>
         );
     }

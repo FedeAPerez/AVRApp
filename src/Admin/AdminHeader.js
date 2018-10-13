@@ -20,8 +20,6 @@ const __BUSINESS_HEADER_TEXT_IMAGE = "admin-business-header-text";
 const HOME = "/content/images/actions/home.svg";
 const SETTINGS_IMAGE = "/content/images/actions/settings.svg";
 const SETTINGS_IMAGE_ACTIVE = "/content/images/actions/settings_active.svg";
-const SEARCH_IMAGE = "/content/images/actions/search.svg";
-const SEARCH_IMAGE_ACTIVE = "/content/images/actions/search_active.svg";
 const STATS = "/content/images/actions/stats.svg";
 const STATS_ACTIVE = "/content/images/actions/stats_active.svg";
 const PATIENT = "/content/images/actions/patient.svg";
@@ -32,8 +30,8 @@ class AdminBusinessHeader extends Component {
         super(props);
         this.state = {
             'userOb' : this.props.user,
-            'option_selected':'welcome',
-            'show_option':'Comenzar'
+            'option_selected':'patients',
+            'show_option':'Pacientes'
         };
     }
 
@@ -71,14 +69,6 @@ class AdminBusinessHeader extends Component {
                 <section 
                     className= { __BUSINESS_HEADER_NAV_CLASS }
                 >
-                    <NavigationItem 
-                        value= { "welcome" }
-                        isSelected= { this.state.option_selected === "welcome" }
-                        defaultImage= { SEARCH_IMAGE }
-                        selectedImage= { SEARCH_IMAGE_ACTIVE }
-                        navigateOption= { this.navigateOption.bind(this) }
-                        showMessage= { "Comenzar" }
-                    />
                     <NavigationItem 
                         value= { "patients" }
                         isSelected= { this.state.option_selected === "patients" }
