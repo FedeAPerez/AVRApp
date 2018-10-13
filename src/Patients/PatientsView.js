@@ -20,9 +20,9 @@ class PatientsView extends Component {
         this.state = {
             patients : [
                 {
-                    name : "Agustín Fernandez",
-                    age : 35,
-                    gender: 'Masculino',
+                    name : "Agustina Fernandez",
+                    age : 26,
+                    gender: 'Femenino',
                     startDate : '12/08/2018',
                     observations : "Mejoró el 32% de su movilidad en solo 4 sesiones."
                 },

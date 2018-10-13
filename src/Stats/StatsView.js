@@ -30,12 +30,12 @@ class PatientsView extends Component {
         this.state = {
             sessions : [
                 {
-                    name : "Agustín Fernandez",
+                    name : "Agustina Fernandez",
                     improvment: '0%',
                     sessionDate : '15/08/2018',
                     data : [
                         {
-                          "id": "Agustín",
+                          "id": "Agustina",
                           "color": "hsl(51, 70%, 50%)",
                           "data": [
                             {
@@ -48,12 +48,12 @@ class PatientsView extends Component {
                     ]
                 },
                 {
-                    name : "Agustín Fernandez",
+                    name : "Agustina Fernandez",
                     improvment : "2%",
                     sessionDate : '01/09/2018',
                     data : [
                         {
-                          "id": "Agustín",
+                          "id": "Agustina",
                           "color": "hsl(51, 70%, 50%)",
                           "data": [
                             {
@@ -71,12 +71,12 @@ class PatientsView extends Component {
                     ]
                 },
                 {
-                    name : "Agustín Fernandez",
-                    improvment : "3%",
+                    name : "Agustina Fernandez",
+                    improvment : "27%",
                     sessionDate : '15/09/2018',
                     data : [
                         {
-                          "id": "Agustín",
+                          "id": "Agustina",
                           "color": "hsl(51, 70%, 50%)",
                           "data": [
                             {
@@ -88,10 +88,36 @@ class PatientsView extends Component {
                                 "color": "hsl(45, 70%, 50%)",
                                 "x": "Día 2",
                                 "y": 2
-                              },
+                            },
                               {
                                 "color": "hsl(45, 70%, 50%)",
                                 "x": "Día 3",
+                                "y": 3
+                              },
+                              {
+                                "color": "hsl(45, 70%, 50%)",
+                                "x": "Día 4",
+                                "y": 4
+                              },
+                              {
+                                "color": "hsl(45, 70%, 50%)",
+                                "x": "Día 5",
+                                "y": 3
+                              },
+                              {
+                                "color": "hsl(45, 70%, 50%)",
+                                "x": "Día 6",
+                                "y": 5
+                              },
+                              
+                              {
+                                "color": "hsl(45, 70%, 50%)",
+                                "x": "Día 7",
+                                "y": 7
+                              },
+                              {
+                                "color": "hsl(45, 70%, 50%)",
+                                "x": "Día 8",
                                 "y": 3
                               }
                           ]

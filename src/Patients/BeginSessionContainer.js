@@ -11,10 +11,15 @@ import BeginSessionButton from './BeginSessionButton';
  * Hojas de Estilo y Constantes
  * */ 
 class BeginSessionContainer extends Component {
-
-    BeginSessionContainer() {
+    constructor(props) {
+        super(props);
+        this.beginSessionHandler = this.beginSessionHandler.bind(this)
+    }
+    
+    beginSessionHandler() {
         console.log("la peli");
     }
+
     render() {
         return <BeginSessionButton onClick={this.beginSessionHandler} />
     }
