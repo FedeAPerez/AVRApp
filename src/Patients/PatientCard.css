@@ -42,3 +42,25 @@
     background-size: 100%;
     transition: background 0s;
 }
+
+.topBar {
+    background-color: #e74c3c;
+    color: white;
+    padding: 2rem;
+    position: relative;
+}
+
+.top-bar-action {
+    position: absolute;
+    left: 0;
+    margin-left: 1rem;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    bottom: 0;
+    top: 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}

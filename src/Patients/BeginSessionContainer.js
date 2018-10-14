@@ -3,6 +3,7 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 /* *
  * Código de librerías internas
  * */ 
@@ -13,15 +14,29 @@ import BeginSessionButton from './BeginSessionButton';
 class BeginSessionContainer extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            createPatient : false
+        };
         this.beginSessionHandler = this.beginSessionHandler.bind(this)
     }
     
     beginSessionHandler() {
-        console.log("la peli");
+        this.setState((prevState, props) => {
+            return {
+                createPatient : true
+            };
+        });
     }
 
     render() {
-        return <BeginSessionButton onClick={this.beginSessionHandler} />
+        if(this.state.createPatient) {
+            return (
+                <Redirect to='/patient/new' />
+            );
+        }
+        else {
+            return <BeginSessionButton onClick={this.beginSessionHandler} />
+        }
     }
 }
 

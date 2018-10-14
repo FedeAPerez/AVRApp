@@ -23,10 +23,6 @@ class SettingsView extends Component {
         };
     }
 
-    componentDidMount() {
-
-    }
-
     closeSession() {
         localStorage.removeItem("av_userSession");
         this.setState({ closeSession : true });

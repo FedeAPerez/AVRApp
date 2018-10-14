@@ -11,8 +11,8 @@ import { withRouter } from 'react-router-dom';
 import LogIn from './LogIn/LogIn';
 import SignUpView from './LogIn/SignUpView';
 import Home from './Home/Home';
-import Navigation from './Navigation/Navigation';
 import AdminView from './Admin/AdminView';
+import NewPatientView from './Patients/NewPatientView';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -40,8 +40,8 @@ class Router extends Component {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={LogIn} />
                 <Route exact path="/signup" component={SignUpView} />
+                <PrivateRoute path="/patient/new" component={NewPatientView} />
                 <PrivateRoute path="/admin/:user" component={AdminView} />
-                <Route exact path="/main" component={Navigation} />
             </Switch>
         );
     }
