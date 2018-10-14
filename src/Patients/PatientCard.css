@@ -10,6 +10,8 @@
     right: 0;
     position: absolute;
     margin-right: 1.5rem;
+
+    /* Center text in the middle */
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -18,4 +20,25 @@
     align-items: center;
     font-size: 1.5rem;
     font-weight: 500;
+
+    /* Text no selectable */
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.bigButton:focus {
+    outline: none;
+}
+
+.bigButton:hover {
+    cursor: pointer;
+    background-color: #e84118;
+}
+
+.bigButton:active {
+    background-color: #f8c291;
+    background-size: 100%;
+    transition: background 0s;
 }

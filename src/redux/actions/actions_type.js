@@ -4,3 +4,5 @@ export const FINISHED_FETCHING = 'FINISHED_FETCHING';
 
 export const AUTH_USER = 'AUTH_USER';
 export const SELECT_USER = 'SELECT_USER';
+
+export const LOAD_PATIENTS = 'LOAD_PATIENTS';

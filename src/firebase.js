@@ -33,6 +33,8 @@ function fbGetUserByEmail(email) {
     return firebase.database().ref(route).orderByChild("email").equalTo(email).once('value');
 }
 
+
+
 const doSignInWithEmailAndPassword = (email, password) => {
     return auth.signInWithEmailAndPassword(email, password);
 }
