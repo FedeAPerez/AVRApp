@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
  * Código de librerías internas
  * */ 
 import SelectPatientContainer from './SelectPatientContainer';
+import { getToken } from '../Firebase/Session';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -40,18 +41,25 @@ class BeginSessionView extends Component {
     }
 
     handleClick() {
-        this.setState((prevState, props) => {
-            return {
-                isValid: false,
-                token: '38662776_15_03'
-            };
-        }, () => {
+        getToken(this.state.patient)
+        .then((res) => {
             this.setState((prevState, props) => {
                 return {
-                    creatingSession: false
+                    isValid: false,
+                    token: res.data.token
                 };
+            }, () => {
+                this.setState((prevState, props) => {
+                    return {
+                        creatingSession: false
+                    };
+                });
             });
+        })
+        .catch((err) => {
+            console.log(err);
         });
+
     }
     validateSession() {
         this.setState((prevState, props) => {
