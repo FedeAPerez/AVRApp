@@ -11,7 +11,7 @@ import BeginSessionButton from './BeginSessionButton';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
-class BeginSessionContainer extends Component {
+class CreateActionContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +31,7 @@ class BeginSessionContainer extends Component {
     render() {
         if(this.state.createPatient) {
             return (
-                <Redirect to='/patient/new' />
+                <Redirect to='/action/new' />
             );
         }
         else {
@@ -40,4 +40,4 @@ class BeginSessionContainer extends Component {
     }
 }
 
-export default BeginSessionContainer;
+export default CreateActionContainer;

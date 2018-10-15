@@ -170,3 +170,14 @@
     animation-iteration-count: 1;
     animation-delay: 3.5s;
 }
+
+footer {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+}

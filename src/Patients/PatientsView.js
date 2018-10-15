@@ -7,7 +7,7 @@ import React, { Component } from 'react';
  * Código de librerías internas
  * */ 
 import { SimpleSection } from '../ComponentsLibrary/Section';
-import BeginSessionContainer from './BeginSessionContainer';
+import CreateActionContainer from './CreateActionContainer';
 import PatientsListContainer from './PatientsListContainer';
 /* *
  * Hojas de Estilo y Constantes
@@ -19,7 +19,7 @@ class PatientsView extends Component {
         return (
             <SimpleSection>
                 <PatientsListContainer />
-                <BeginSessionContainer />
+                <CreateActionContainer />
             </SimpleSection>
         );
     }

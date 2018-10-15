@@ -12,7 +12,8 @@ import LogIn from './LogIn/LogIn';
 import SignUpView from './LogIn/SignUpView';
 import Home from './Home/Home';
 import AdminView from './Admin/AdminView';
-import NewPatientView from './Patients/NewPatientView';
+import NewActionView from './Actions/NewActionView';
+import BeginSessionView from './Session/BeginSessionView';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -40,7 +41,8 @@ class Router extends Component {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={LogIn} />
                 <Route exact path="/signup" component={SignUpView} />
-                <PrivateRoute path="/patient/new" component={NewPatientView} />
+                <PrivateRoute path="/action/new" component={NewActionView} />
+                <PrivateRoute path="/session/new" component={BeginSessionView} />
                 <PrivateRoute path="/admin/:user" component={AdminView} />
             </Switch>
         );
