@@ -12,6 +12,8 @@ import SelectPatientContainer from './SelectPatientContainer';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
+import './BeginSession.css';
+
 class BeginSessionView extends Component {
     constructor(props) {
         super(props);
@@ -19,11 +21,14 @@ class BeginSessionView extends Component {
         this.state = {
             goBack: false,
             isValid: false,
-            patient: 0
+            patient: 0,
+            creatingSession : true,
+            token: ''
         };
 
         this.backToAction = this.backToAction.bind(this);
         this.handleChangePatient = this.handleChangePatient.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     backToAction() {
@@ -37,8 +42,15 @@ class BeginSessionView extends Component {
     handleClick() {
         this.setState((prevState, props) => {
             return {
-
+                isValid: false,
+                token: '38662776_15_03'
             };
+        }, () => {
+            this.setState((prevState, props) => {
+                return {
+                    creatingSession: false
+                };
+            });
         });
     }
     validateSession() {
@@ -74,14 +86,26 @@ class BeginSessionView extends Component {
                             <span className="top-bar-action-text">Iniciar Rehabilitación</span>
                             </span> 
                         </section>
-                        <SelectPatientContainer handleChangePatient={this.handleChangePatient}/>
-                        <Button 
-                            variant="contained" 
-                            color="primary" 
-                            disabled={!this.state.isValid}
-                            onClick={this.handleClick}>
-                            Comenzar
-                        </Button>
+                        {
+                            this.state.creatingSession && 
+                            <section>
+                            <SelectPatientContainer handleChangePatient={this.handleChangePatient}/>
+                            <Button 
+                                variant="contained" 
+                                color="primary" 
+                                disabled={!this.state.isValid}
+                                onClick={this.handleClick}>
+                                Comenzar
+                            </Button>
+                            </section>
+                        }
+                        { this.state.token != '' &&
+                        <div className="token">
+                        <span>
+                            { this.state.token }
+                        </span>
+                        </div>
+                        }
                 </section>
                 );
             }

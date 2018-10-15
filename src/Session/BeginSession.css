@@ -1,0 +1,11 @@
+.token {
+    margin: 3rem auto;
+    font-size: 2rem;
+    color: #e74c3c;
+    padding: 1rem;
+    font-weight: 600;
+    width: 70%;
+    border-radius: 1rem;    
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1);
+}
