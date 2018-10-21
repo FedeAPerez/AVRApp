@@ -23,6 +23,12 @@ const styles = {
         width: '80%'
     }
   };
+const newPatientConstructor = {
+
+    idPatient : '',
+    name : '',
+    age : ''
+};
 
 class CreatePatientView extends Component {
     constructor(props) {
@@ -30,11 +36,7 @@ class CreatePatientView extends Component {
 
         this.state = {
             goBack: false,
-            newPatient : {
-                idPatient : '',
-                name : '',
-                age : ''
-            },
+            newPatient : newPatientConstructor,
             isValid: false
         };
 
@@ -55,12 +57,18 @@ class CreatePatientView extends Component {
 
     handleClick() {
         createModifyPatient(this.state.newPatient);
+        this.setState((prevState, props) => {
+            return {
+                newPatient : Object.assign({}, newPatientConstructor)
+            };
+        });
     }
     
     validateSession() {
         this.setState((prevState, props) => {
             return {
                 isValid : prevState.newPatient.name != '' && prevState.newPatient.age != 0 && prevState.newPatient.idPatient != ''
+
             };
         });
     }
