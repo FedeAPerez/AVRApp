@@ -149,18 +149,19 @@
     opacity: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 5rem;
     margin: 0em auto;
-
     border-radius: 100%;
     background-color: white;
     color: #e74c3c;
-    padding: 1rem;
+    padding: 2rem;
     position: absolute;
     top: 30%;
     left: 0;
     right: 0;
     margin: 0rem auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
 }
 

@@ -20,7 +20,6 @@ class PatientsListContainer extends Component {
     componentDidMount() {
         getPatients()
         .then((res) => {
-            console.log(res.val());
             this.setState((prevState, props) => {
                 return {
                     patients : [

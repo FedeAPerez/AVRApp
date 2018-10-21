@@ -61,6 +61,7 @@ class BeginSessionView extends Component {
         });
 
     }
+    
     validateSession() {
         this.setState((prevState, props) => {
             return {

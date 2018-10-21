@@ -45,7 +45,6 @@ class NewActionView extends Component {
     }
 
     goToSession() {
-        console.log("Me estoy ejecutando");
         this.setState((prevState, props) => {
             return {
                 goSession : true
@@ -54,7 +53,6 @@ class NewActionView extends Component {
     }
 
     render() {
-        console.log(this.state);
         if(this.state.goBack) {
             return (
                 <Redirect to='/login' />
