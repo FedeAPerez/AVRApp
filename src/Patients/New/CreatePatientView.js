@@ -22,9 +22,9 @@ const styles = {
         minWidth: '200px',
         width: '80%'
     }
-  };
-const newPatientConstructor = {
+};
 
+const newPatientConstructor = {
     idPatient : '',
     name : '',
     age : ''
@@ -59,7 +59,8 @@ class CreatePatientView extends Component {
         createModifyPatient(this.state.newPatient);
         this.setState((prevState, props) => {
             return {
-                newPatient : Object.assign({}, newPatientConstructor)
+                newPatient : Object.assign({}, newPatientConstructor),
+                isValid: false
             };
         });
     }
@@ -68,46 +69,46 @@ class CreatePatientView extends Component {
         this.setState((prevState, props) => {
             return {
                 isValid : prevState.newPatient.name != '' && prevState.newPatient.age != 0 && prevState.newPatient.idPatient != ''
-
             };
         });
     }
+
     handleIdChange(event) {
         event.preventDefault();
         const eventv = { value : event.target.value};
         this.setState((prevState, props) => {
             return {
                 newPatient : Object.assign({}, prevState.newPatient, {idPatient : eventv.value})
-                
             };
         }, () => {
             this.validateSession();
         });
     }
+
     handleNameChange(event) {
         event.preventDefault();
         const eventv = { value : event.target.value};
         this.setState((prevState, props) => {
             return {
                 newPatient : Object.assign({}, prevState.newPatient, {name : eventv.value})
-                
             };
         }, () => {
             this.validateSession();
         });
     }
+
     handleAgeChange(event) {
         event.preventDefault();
         const eventv = { value : event.target.value};
         this.setState((prevState, props) => {
             return {
                 newPatient : Object.assign({}, prevState.newPatient, {age : eventv.value})
-                
             };
         }, () => {
             this.validateSession();
         });
     }
+
     render() {
         const { classes } = this.props;
 

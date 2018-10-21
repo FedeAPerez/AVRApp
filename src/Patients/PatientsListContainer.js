@@ -22,14 +22,7 @@ class PatientsListContainer extends Component {
         .then((res) => {
             this.setState((prevState, props) => {
                 return {
-                    patients : [
-                        {
-                        name: "Federico Pérez",
-                        age: 23,
-                        beginDate: "12/03/1995",
-                        observations: "Mejoró mucho en las últimas 4 semanas."
-                        }
-                    ]
+                    patients : res
                 };
             });
         })
