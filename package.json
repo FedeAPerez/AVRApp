@@ -2,6 +2,7 @@
   "name": "r-app-core",
   "version": "0.1.0",
   "private": true,
+  "engines": { "node": "6" },
   "dependencies": {
     "@material-ui/core": "^3.2.1",
     "@nivo/line": "^0.42.1",
