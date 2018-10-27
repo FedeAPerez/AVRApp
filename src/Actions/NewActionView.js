@@ -1,4 +1,3 @@
-// BlankFile.js
 /* *
  * Código de librerías externas
  * */

@@ -28,7 +28,7 @@
 }
 .admin-business-header-container h2 .biggerH2{
     font-weight: 500;
-    color: #f16334;
+    color: #ac1710;
 }
 .admin-business-header-link {
     float: left;
@@ -81,5 +81,5 @@
     cursor: pointer;
 }
 .resalt {
-    border-bottom: 3px solid #f16334;
+    border-bottom: 3px solid #ac1710;
 }
