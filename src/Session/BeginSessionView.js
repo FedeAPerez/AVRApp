@@ -43,6 +43,7 @@ class BeginSessionView extends Component {
     handleClick() {
         getToken(this.state.patient)
         .then((res) => {
+            console.log(res);
             this.setState((prevState, props) => {
                 return {
                     isValid: false,
