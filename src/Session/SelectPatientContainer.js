@@ -19,7 +19,8 @@ class SelectPatientContainer extends Component {
         super(props);
 
         this.state = {
-            patient: 0
+            idPatient: 0,
+            patients: []
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -30,15 +31,7 @@ class SelectPatientContainer extends Component {
         .then((res) => {
             this.setState((prevState, props) => {
                 return {
-                    patients : [
-                        {
-                        id: 38662776,
-                        name: "Federico Pérez",
-                        age: 23,
-                        beginDate: "12/03/1995",
-                        observations: "Mejoró mucho en las últimas 4 semanas."
-                        }
-                    ]
+                    patients : res
                 };
             });
         })
@@ -50,7 +43,7 @@ class SelectPatientContainer extends Component {
     handleChange(event) {
         this.setState((prevState, props) => {
             return {
-                patient : event.target.value
+                idPatient : event.target.value
             };
         }, () => {
             this.props.handleChangePatient(event.target.value, event.target.name)
@@ -64,7 +57,7 @@ class SelectPatientContainer extends Component {
         >
             <RedInputLabel>Paciente</RedInputLabel>
             <SelectPatient
-                patient={this.state.patient} 
+                idPatient={this.state.idPatient} 
                 patients={this.state.patients} 
                 handleChange={this.handleChange} />
         </MiddleFormControl>

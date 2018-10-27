@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 const SelectPatient = ({...props, children}) => {
     return (
             <Select
-                value={props.patient}
+                value={props.idPatient}
                 onChange={props.handleChange}
                 input={<FilledInput name="patient" id="filled-patient-simple" />}
             >
@@ -14,10 +14,10 @@ const SelectPatient = ({...props, children}) => {
                     <em>-</em>
                 </MenuItem>
                 {
-                    props.patients &&
+                    props.patients && props.patients.length > 0 &&
                     props.patients.map((element, index) => {
                         return (
-                            <MenuItem key={"patient_"+index} value={element.id}>{element.name}</MenuItem>
+                            <MenuItem key={"patient_"+index} value={element.idPatient}>{element.name}</MenuItem>
                         );
                     })
                 }
