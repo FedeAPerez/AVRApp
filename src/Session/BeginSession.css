@@ -9,14 +9,18 @@
 }
 
 .tokenOnboardingBox {
-    font-family: "Rubik";
     margin: 2rem;
     display: flex;
     align-items: center;
-    color: #7f8c8d;
     border: 2px solid rgb(0, 0, 0, 0.1);
     border-radius: 1rem;
     padding: 0.5rem;
+}
+
+.tokenOnboardingBox span {
+    font-family: "Rubik";
+    color: #7f8c8d;
+    font-weight: 400;
 }
 
 .tokenOnboardingBox b {
