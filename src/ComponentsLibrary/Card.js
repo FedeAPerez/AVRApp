@@ -12,7 +12,9 @@ const Card = styled.div`
 
     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 0px;
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 `;
 
 export default Card;
