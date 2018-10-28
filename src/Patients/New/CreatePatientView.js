@@ -157,7 +157,7 @@ class CreatePatientView extends Component {
 
                     {
                         this.state.isCreationOk &&
-                        <InformationBox imageSrc={"/content/images/actions/done.svg"}>El paciente se registró correctamente</InformationBox>
+                        <InformationBox imageSrc="done">El paciente se registró correctamente</InformationBox>
                     }
             </section>
     );

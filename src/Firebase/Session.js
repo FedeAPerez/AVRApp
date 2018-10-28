@@ -13,6 +13,8 @@ export function getToken(patientId) {
     return fetch(process.env.REACT_APP_API_URL.replace(/ /g,'') + '/token', myInitConfiguation)
     .then(res => res.json(), (error) => {return {hasError : true, errorDescription : error}})
     .then((res) => {
-        return res 
+        if(res.head.status != 200)
+            throw new Error("Error al generar token");
+        return res;
     });
 }

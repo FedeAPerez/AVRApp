@@ -25,7 +25,8 @@ class BeginSessionView extends Component {
             isValid: false,
             patient: 0,
             creatingSession : true,
-            token: ''
+            token: '',
+            errorCreating : false
         };
 
         this.backToAction = this.backToAction.bind(this);
@@ -59,6 +60,11 @@ class BeginSessionView extends Component {
         })
         .catch((err) => {
             console.log(err);
+            this.setState((prevState, props) => {
+                return {
+                    errorCreating : true
+                };
+            });
         });
 
     }
@@ -111,13 +117,17 @@ class BeginSessionView extends Component {
                         }
                         { this.state.token != '' &&
                             <section>
-                                <InformationBox imageSrc={"/content/images/actions/info.svg"}>El siguiente número deberás ingresarlo en la <b>aplicación de escritorio</b> de Ataxia Visión.</InformationBox>
+                                <InformationBox imageSrc="info">El siguiente número deberás ingresarlo en la <b>aplicación de escritorio</b> de Ataxia Visión.</InformationBox>
                                 <div className="token">
                                 <span>
                                     { this.state.token }
                                 </span>
                                 </div>
                             </section>
+                        }
+                        {
+                            this.state.errorCreating &&
+                            <InformationBox imageSrc="error">Hubo un error al iniciar tu sesión... no te preocupes, podemos recuperar tus datos luego. Utilizá el dispositivo de <b>escritorio</b> para la rehabilitación.</InformationBox>
                         }
                 </section>
                 );
