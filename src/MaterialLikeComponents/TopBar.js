@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import './TopBar.css';
 
 const TopBar = ({...props, children}) => {
     if(props.goBack) {

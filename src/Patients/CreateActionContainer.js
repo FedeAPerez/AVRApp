@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 /* *
  * Código de librerías internas
  * */ 
-import BeginSessionButton from './BeginSessionButton';
+import BigButton from '../MaterialLikeComponents/BigButton';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -35,7 +35,7 @@ class CreateActionContainer extends Component {
             );
         }
         else {
-            return <BeginSessionButton onClick={this.beginSessionHandler} />
+            return <BigButton symbol={"+"} onClick={this.beginSessionHandler} />
         }
     }
 }

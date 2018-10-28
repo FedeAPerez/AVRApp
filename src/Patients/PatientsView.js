@@ -12,7 +12,6 @@ import PatientsListContainer from './PatientsListContainer';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
-import './PatientCard.css';
 
 class PatientsView extends Component {
     render() {

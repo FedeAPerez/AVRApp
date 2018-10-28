@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
  * */ 
 import SelectPatientContainer from './SelectPatientContainer';
 import { getToken } from '../Firebase/Session';
+import InformationBox from '../MaterialLikeComponents/InformationBox';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -110,10 +111,7 @@ class BeginSessionView extends Component {
                         }
                         { this.state.token != '' &&
                             <section>
-                                <div className="tokenOnboardingBox">
-                                    <span className="infoIcon"><img rel="preload" src={"/content/images/actions/info.svg"} /></span>
-                                    <span>El siguiente número deberás ingresarlo en la <b>aplicación de escritorio</b> de Ataxia Visión.</span>
-                                </div>
+                                <InformationBox imageSrc={"/content/images/actions/info.svg"}></InformationBox>
                                 <div className="token">
                                 <span>
                                     { this.state.token }

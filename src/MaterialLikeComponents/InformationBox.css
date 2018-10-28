@@ -1,0 +1,19 @@
+
+.InformationBox {
+    margin: 2rem;
+    display: flex;
+    align-items: center;
+    border: 2px solid rgb(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+.InformationBox span {
+    font-family: "Rubik";
+    color: #7f8c8d;
+    font-weight: 400;
+}
+
+.InformationBox b {
+    color: black;
+}
