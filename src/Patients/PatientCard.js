@@ -7,8 +7,7 @@ const PatientCard = ({ ...props, children}) => {
     return (
         <Card noPadding noLaterals relative>
             <SimpleSection noLaterals relative>
-                <Text bolded noMargin>{props.name}</Text>
-                <Text noMargin topMargin><BoldText>Edad: </BoldText>{props.age}</Text>
+                <Text noMargin><BoldText>{props.name}</BoldText> {props.age} años.</Text>
                 <Text noMargin topMargin><BoldText>Comenzó el tratamiento: </BoldText>{props.startDate}</Text>
                 {   props.observations &&
                     <Text secondary noMargin topMargin><BoldText>Observaciones: </BoldText>{props.observations}</Text>

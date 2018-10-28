@@ -11,6 +11,7 @@ import { withStyles } from '@material-ui/core/styles';
  * */ 
 import { createModifyPatient } from '../../Firebase/Patients';
 import TopBar from '../../MaterialLikeComponents/TopBar';
+import InformationBox from '../../MaterialLikeComponents/InformationBox';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -37,7 +38,8 @@ class CreatePatientView extends Component {
         this.state = {
             goBack: false,
             newPatient : newPatientConstructor,
-            isValid: false
+            isValid: false,
+            isCreationOk: false
         };
 
         this.backToAction = this.backToAction.bind(this);
@@ -60,7 +62,8 @@ class CreatePatientView extends Component {
         this.setState((prevState, props) => {
             return {
                 newPatient : Object.assign({}, newPatientConstructor),
-                isValid: false
+                isValid: false,
+                isCreationOk: true
             };
         });
     }
@@ -151,6 +154,11 @@ class CreatePatientView extends Component {
                     >
                             Registrar
                     </Button>
+
+                    {
+                        this.state.isCreationOk &&
+                        <InformationBox imageSrc={"/content/images/actions/done.svg"}>El paciente se registró correctamente</InformationBox>
+                    }
             </section>
     );
     }

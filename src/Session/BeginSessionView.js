@@ -111,7 +111,7 @@ class BeginSessionView extends Component {
                         }
                         { this.state.token != '' &&
                             <section>
-                                <InformationBox imageSrc={"/content/images/actions/info.svg"}></InformationBox>
+                                <InformationBox imageSrc={"/content/images/actions/info.svg"}>El siguiente número deberás ingresarlo en la <b>aplicación de escritorio</b> de Ataxia Visión.</InformationBox>
                                 <div className="token">
                                 <span>
                                     { this.state.token }

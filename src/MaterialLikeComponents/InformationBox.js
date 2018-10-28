@@ -5,7 +5,7 @@ const InformationBox = ({...props, children}) => {
     return (
         <div className="InformationBox">
         <span><img rel="preload" src={props.imageSrc} /></span>
-        <span>El siguiente número deberás ingresarlo en la <b>aplicación de escritorio</b> de Ataxia Visión.</span>
+        <span>{props.children}</span>
         </div>
     );
 };
