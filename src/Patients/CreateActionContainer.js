@@ -15,27 +15,28 @@ class CreateActionContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            createPatient : false
+            createActions : false
         };
-        this.beginSessionHandler = this.beginSessionHandler.bind(this)
+        
+        this.createActionsHandler = this.createActionsHandler.bind(this)
     }
     
-    beginSessionHandler() {
+    createActionsHandler() {
         this.setState((prevState, props) => {
             return {
-                createPatient : true
+                createActions : true
             };
         });
     }
 
     render() {
-        if(this.state.createPatient) {
+        if(this.state.createActions) {
             return (
                 <Redirect to='/action/new' />
             );
         }
         else {
-            return <BigButton symbol={"+"} onClick={this.beginSessionHandler} />
+            return <BigButton symbol={"+"} onClick={this.createActionsHandler} />
         }
     }
 }

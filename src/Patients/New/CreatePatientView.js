@@ -1,19 +1,18 @@
-// BlankFile.js
 /* *
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+
 /* *
  * Código de librerías internas
  * */ 
 import CreatePatientFormContainer from './CreatePatientFormContainer';
 import TopBar from '../../MaterialLikeComponents/TopBar';
 import InformationBox from '../../MaterialLikeComponents/InformationBox';
+
 /* *
  * Hojas de Estilo y Constantes
  * */ 
-
-
 
 class CreatePatientView extends Component {
     constructor(props) {

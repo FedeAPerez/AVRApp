@@ -24,9 +24,9 @@ class CreatePatientFormContainer extends Component {
 
         this.state = {
             newPatient : newPatientConstructor,
-            isValid: false,
-            isCreationOk: false
+            isValid: false
         };
+        
         this.handleClick = this.handleClick.bind(this);
         this.handleIdChange = this.handleIdChange.bind(this);
         this.handleAgeChange = this.handleAgeChange.bind(this);
@@ -95,6 +95,7 @@ class CreatePatientFormContainer extends Component {
                 handleIdChange={this.handleIdChange}
                 handleNameChange={this.handleNameChange}
                 handleClick={this.handleClick}
+
                 newPatient={this.state.newPatient}
                 isValid = {this.state.isValid}
             />
