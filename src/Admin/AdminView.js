@@ -12,16 +12,20 @@ import AdminHeader from './AdminHeader';
 import { fbGetUser  } from '../firebase';
 import * as Actions from '../redux/actions/actions';
 import StatsView from '../Stats/StatsView';
-import  PatientsView from '../Patients/PatientsView';
+import PatientsView from '../Patients/PatientsView';
 import SettingsView from '../Settings/SettingsView';
+import SessionsView from '../Session/Show/SessionsView';
+
 /* *
  * Hojas de Estilo y Constantes
  * */
+
 import './AdminView.css';
 const keyMap = {
     'settings' : SettingsView,
     'patients': PatientsView,
-    'stats': StatsView
+    'stats': StatsView,
+    'sessions' : SessionsView
 };
 
 class AdminView extends Component {

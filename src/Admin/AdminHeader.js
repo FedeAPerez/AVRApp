@@ -24,6 +24,8 @@ const STATS = "/content/images/actions/stats.svg";
 const STATS_ACTIVE = "/content/images/actions/stats_active.svg";
 const PATIENT = "/content/images/actions/patient.svg";
 const PATIENT_ACTIVE = "/content/images/actions/patient_active.svg";
+const SESSIONS = "/content/images/actions/chart.svg";
+const SESSIONS_ACTIVE = "/content/images/actions/chart_active.svg";
 
 class AdminBusinessHeader extends Component {
 	constructor(props) {
@@ -76,6 +78,14 @@ class AdminBusinessHeader extends Component {
                         selectedImage= { PATIENT_ACTIVE }
                         navigateOption= { this.navigateOption.bind(this) }
                         showMessage= { "Pacientes" }
+                    />
+                    <NavigationItem 
+                        value= { "sessions" }
+                        isSelected= { this.state.option_selected === "sessions" }
+                        defaultImage= { SESSIONS }
+                        selectedImage= { SESSIONS_ACTIVE }
+                        navigateOption= { this.navigateOption.bind(this) }
+                        showMessage= { "Sesiones" }
                     />
                     <NavigationItem 
                         value= { "stats" }
