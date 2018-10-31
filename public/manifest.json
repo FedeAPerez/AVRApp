@@ -3,13 +3,7 @@
   "name": "Para valerte por vos mismo.",
   "icons": [
     {
-      "src": "ataxia-icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "ataxia-icon-512.png",
-      "type": "image/png",
+      "src": "favicon.ico",
       "sizes": "512x512"
     }
   ],
