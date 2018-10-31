@@ -30,11 +30,11 @@ class PatientsView extends Component {
         this.state = {
             sessions : [
                 {
-                    name : "Ariel Molina",
-                    improvment : "27%",
+                    name : "Ataxia Visión",
+                    improvment : "Información cruzada de los pacientes",
                     data : [
                         {
-                          "id": "Desvíos",
+                          "id": "Paciente 1",
                           "color": "hsl(51, 70%, 50%)",
                           "data": [
                             {
@@ -71,7 +71,47 @@ class PatientsView extends Component {
                                 "y": 1
                               }
                           ]
-                        }
+                        },
+
+                        {
+                            "id": "Paciente 2",
+                            "color": "hsl(23, 70%, 50%)",
+                            "data": [
+                              {
+                                "x": "Día 1",
+                                "y": 20
+                              },
+                              {
+                                  "x": "Día 2",
+                                  "y": 9
+                              },
+                                {
+                                  "x": "Día 3",
+                                  "y": 11
+                                },
+                                {
+                                  "x": "Día 4",
+                                  "y": 9
+                                },
+                                {
+                                  "x": "Día 5",
+                                  "y": 7
+                                },
+                                {
+                                  "x": "Día 6",
+                                  "y": 3
+                                },
+                                
+                                {
+                                  "x": "Día 7",
+                                  "y": 0
+                                },
+                                {
+                                  "x": "Día 8",
+                                  "y": 1
+                                }
+                            ]
+                          }
                     ]
                 }
             ]

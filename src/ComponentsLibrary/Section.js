@@ -11,7 +11,7 @@ const SimpleSection = styled.div`
     position: ${ props => props.relative ? 'relative' : 'initial'};
     background-color: inherit;
     
-    height: ${ props => props.fixed ? '200px' : '' };
+    height: ${ props => props.fixed ? '300px' : '' };
     cursor: inherit;
 `;
 

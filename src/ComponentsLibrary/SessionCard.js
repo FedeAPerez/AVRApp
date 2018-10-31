@@ -1,6 +1,6 @@
 import React from 'react';
 import { SimpleSection } from './Section';
-import { Text, BoldText } from './Text';
+import { Text } from './Text';
 import { Card } from './Card';
 import { ResponsiveLine } from '@nivo/line'
 /**
@@ -12,7 +12,7 @@ const SessionCard = ({ ...props, children}) => {
         <Card noPadding noLaterals>
             <SimpleSection noLaterals relative>
                 <Text bolded noMargin>{props.name}</Text>
-                <Text noMargin topMargin><BoldText>Mejora: </BoldText>{props.improvment}</Text>
+                <Text noMargin topMargin>{props.improvment}</Text>
                 { props.data &&
                 <SimpleSection fixed>
                 <ResponsiveLine
