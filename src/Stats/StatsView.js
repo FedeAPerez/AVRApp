@@ -41,12 +41,12 @@ class PatientsView extends Component {
                             {
                               "color": "hsl(45, 70%, 50%)",
                               "x": "Día 1",
-                              "y": 0
+                              "y": 10
                             },
                             {
                                 "color": "hsl(45, 70%, 50%)",
                                 "x": "Día 2",
-                                "y": 2
+                                "y": 5
                             },
                               {
                                 "color": "hsl(45, 70%, 50%)",
@@ -66,18 +66,18 @@ class PatientsView extends Component {
                               {
                                 "color": "hsl(45, 70%, 50%)",
                                 "x": "Día 6",
-                                "y": 5
+                                "y": 3
                               },
                               
                               {
                                 "color": "hsl(45, 70%, 50%)",
                                 "x": "Día 7",
-                                "y": 7
+                                "y": 0
                               },
                               {
                                 "color": "hsl(45, 70%, 50%)",
                                 "x": "Día 8",
-                                "y": 3
+                                "y": 1
                               }
                           ]
                         }
