@@ -34,7 +34,7 @@ class PatientsView extends Component {
                     improvment : "Información cruzada de los pacientes",
                     data : [
                         {
-                          "id": "Paciente 1",
+                          "id": "Pac. 1",
                           "color": "hsl(51, 70%, 50%)",
                           "data": [
                             {
@@ -74,7 +74,7 @@ class PatientsView extends Component {
                         },
 
                         {
-                            "id": "Paciente 2",
+                            "id": "Pac. 2",
                             "color": "hsl(23, 70%, 50%)",
                             "data": [
                               {
