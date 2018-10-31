@@ -12,7 +12,6 @@ const SessionCard = ({ ...props, children}) => {
         <Card noPadding noLaterals>
             <SimpleSection noLaterals relative>
                 <Text bolded noMargin>{props.name}</Text>
-                <Text noMargin topMargin>{props.sessionDate}</Text>
                 <Text noMargin topMargin><BoldText>Mejora: </BoldText>{props.improvment}</Text>
                 { props.data &&
                 <SimpleSection fixed>
