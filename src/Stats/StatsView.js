@@ -30,53 +30,12 @@ class PatientsView extends Component {
         this.state = {
             sessions : [
                 {
-                    name : "Agustina Fernandez",
-                    improvment: '0%',
-                    sessionDate : '15/08/2018',
-                    data : [
-                        {
-                          "id": "Agustina",
-                          "color": "hsl(51, 70%, 50%)",
-                          "data": [
-                            {
-                              "color": "hsl(45, 70%, 50%)",
-                              "x": "Día 1",
-                              "y": 0
-                            }
-                          ]
-                        }
-                    ]
-                },
-                {
-                    name : "Agustina Fernandez",
-                    improvment : "2%",
-                    sessionDate : '01/09/2018',
-                    data : [
-                        {
-                          "id": "Agustina",
-                          "color": "hsl(51, 70%, 50%)",
-                          "data": [
-                            {
-                              "color": "hsl(45, 70%, 50%)",
-                              "x": "Día 1",
-                              "y": 0
-                            },
-                            {
-                                "color": "hsl(45, 70%, 50%)",
-                                "x": "Día 2",
-                                "y": 2
-                              }
-                          ]
-                        }
-                    ]
-                },
-                {
-                    name : "Agustina Fernandez",
+                    name : "Ariel Molina",
                     improvment : "27%",
                     sessionDate : '15/09/2018',
                     data : [
                         {
-                          "id": "Agustina",
+                          "id": "Desvíos",
                           "color": "hsl(51, 70%, 50%)",
                           "data": [
                             {

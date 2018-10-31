@@ -40,7 +40,7 @@ const SessionCard = ({ ...props, children}) => {
                         "tickSize": 5,
                         "tickPadding": 5,
                         "tickRotation": 0,
-                        "legend": "Mejora",
+                        "legend": "Desvíos",
                         "legendOffset": -40,
                         "legendPosition": "center"
                     }}
