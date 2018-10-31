@@ -7,17 +7,23 @@ function reduceTwoExToSessions(listOfEx) {
         adjustments : 0,
         okExercises : 0,
         failedExercises : 0,
-        sessionDate : ""
+        sessionDate : "",
+        duration : 0
     }
     
     for(const ex in listOfEx) {
+        // Ajustes
         reduced.adjustments += listOfEx[ex].Desvios;
+
+        // Ex con exito
         if(listOfEx[ex].FinalizoConExito) {
             reduced.okExercises++;
         }
         else {
             reduced.failedExercises++;
         }
+
+        // Obtención de fechas
         try {
             let exDate = new Date(listOfEx[ex].Fecha);
             if(isNaN(exDate.getDate()))
@@ -26,6 +32,17 @@ function reduceTwoExToSessions(listOfEx) {
         }
         catch(err) {
             reduced.sessionDate = "Sin fecha asignada";
+        }
+
+        // Obtención de duración
+
+        try {
+            let exDur = listOfEx[ex].Duracion;
+            var a = exDur.split(':');
+            reduced.duration = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+        }
+        catch(err) {
+            //console.error(err);
         }
     };
     return reduced;
@@ -55,6 +72,12 @@ const PatientSessionList = ({...props, children}) => {
                                 <Text key={"patientSessionListItemAdj_"+index} lateralMargin><BoldText>Desvíos:</BoldText> { " Sin desvíos " }<Emoji>&#x2714</Emoji></Text>
                                 : null
                             }
+                            
+                            {
+                                reduceFromSessionsToExer.duration !== 0 &&
+                                <Text key={"patientSessionListItemDuration_"+index} lateralMargin><BoldText>Duración:</BoldText> {reduceFromSessionsToExer.duration} segundos</Text>
+                            }
+
                             {
                                 shouldHaveBreak ?
                                 <hr key={"patientSessionListItemHr_"+index} />

@@ -52,9 +52,7 @@ class PatientSessionListContainer extends Component {
             ]*/
             this.state.sessionsData ?
             this.state.sessionsData.map((element, index) => {
-                
-                console.log(element.name);
-                console.log(element.sessions);
+
                 return (
                     <PatientSessionList 
                         name= {element.name} 
