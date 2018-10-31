@@ -104,7 +104,7 @@ class PatientsView extends Component {
                                 
                                 {
                                   "x": "Día 7",
-                                  "y": 0
+                                  "y": 2
                                 },
                                 {
                                   "x": "Día 8",
