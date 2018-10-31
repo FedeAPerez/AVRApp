@@ -3,11 +3,14 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
  * */ 
 import PatientSessionList from './PatientSessionList';
-import { getPatients, loadSessions } from '../../Firebase/Session';
+import Text from '../../ComponentsLibrary/Text';
+import { loadSessions } from '../../Firebase/Session';
+import {startFetching, finishedFetching} from '../../redux/actions/actions';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -20,6 +23,8 @@ class PatientSessionListContainer extends Component {
         };
     }
     componentDidMount() {
+        const { dispatch } = this.props;
+        dispatch(startFetching())
         loadSessions()
         .then((res) => {
             this.setState((prevState, props) => {
@@ -29,6 +34,7 @@ class PatientSessionListContainer extends Component {
                 })
                 return { sessionsData : sessionsData}
             });
+            dispatch(finishedFetching());
         })
         .catch((err) => {
             this.setState((prevState, props) => {
@@ -60,9 +66,9 @@ class PatientSessionListContainer extends Component {
                         key={element.name + index} />
                 );
             })
-            : <span>{this.state.message}</span>
+            : <Text lateralMargin>{this.state.message}</Text>
         );
     }
 }
 
-export default PatientSessionListContainer;
+export default connect()(PatientSessionListContainer);

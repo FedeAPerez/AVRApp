@@ -3,11 +3,13 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
  * */ 
 import PatientsList from './PatientsList';
 import { getPatients } from '../Firebase/Patients';
+import { startFetching, finishedFetching } from '../redux/actions/actions';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -18,6 +20,8 @@ class PatientsListContainer extends Component {
     }
 
     componentDidMount() {
+        const { dispatch } = this.props;
+        dispatch(startFetching())
         getPatients()
         .then((res) => {
             this.setState((prevState, props) => {
@@ -25,6 +29,7 @@ class PatientsListContainer extends Component {
                     patients : res
                 };
             });
+            dispatch(finishedFetching());
         })
         .catch((err) => {
             console.log(err);
@@ -38,4 +43,4 @@ class PatientsListContainer extends Component {
     }
 }
 
-export default PatientsListContainer;
+export default connect()(PatientsListContainer);

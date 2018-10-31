@@ -1,0 +1,20 @@
+.loading-spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+}
+
+.loading-spinner > img {
+    position: fixed;
+    left: 0;
+    top: 25%;
+    bottom: 0;
+    right: 0;
+    vertical-align: middle;
+    margin: 0em auto;
+    display: block;
+}

@@ -15,7 +15,7 @@ import StatsView from '../Stats/StatsView';
 import PatientsView from '../Patients/PatientsView';
 import SettingsView from '../Settings/SettingsView';
 import SessionsView from '../Session/Show/SessionsView';
-
+import LoaderContainer from './LoaderContainer';
 /* *
  * Hojas de Estilo y Constantes
  * */
@@ -62,6 +62,7 @@ class AdminView extends Component {
                         user = { this.state.userOb } />
                     <KeySelected 
                         user= { this.state.userOb } />
+                        <LoaderContainer />
                 </main>
             );
         }
