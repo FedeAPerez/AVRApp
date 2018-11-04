@@ -69,6 +69,7 @@ class SelectExerciseContainer extends Component {
                 {
                     this.state.idExercise !== 0 &&
                     <section className="ex-description">
+                        <span className="dif-shower"></span>
                         <Text lateralMargin><BoldText>Dificultad:</BoldText> {exSelected.exercise.difficulty}/5</Text>
                         <Text lateralMargin><BoldText>Descripción:</BoldText> {exSelected.exercise.description}</Text>
                     </section>

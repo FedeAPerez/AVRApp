@@ -2,8 +2,23 @@
     width: 80%;
     margin: 0rem auto;
     text-align: left;
-    background-color: #bdc3c7;
+    background-color: #ecf0f1;
     padding: 0.3rem;
     margin-bottom: 2rem;
     border-radius: 0.5rem;
+    position: relative;
+}
+
+.dif-shower{
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: -webkit-gradient(linear,left bottom, right top,from(rgb(255, 255, 255, 0)), color-stop(50%, rgb(255, 255, 255, 0)) ,color-stop(50%, #c0392b),to(#c0392b));
+    background-image: -webkit-linear-gradient(bottom left,rgb(255, 255, 255, 0) 0%, rgb(255, 255, 255, 0) 50% ,#c0392b 50%,#c0392b 100%);
+    background-image: -o-linear-gradient(bottom left,rgb(255, 255, 255, 0) 0%, rgb(255, 255, 255, 0) 50% ,#c0392b 50%,#c0392b 100%);
+    background-image: linear-gradient(to top right,rgb(255, 255, 255, 0) 0%, rgb(255, 255, 255, 0) 50% ,#c0392b 50%,#c0392b 100%);
+    width: 1rem;
+    height: 1rem;
+
 }
