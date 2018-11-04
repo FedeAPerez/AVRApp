@@ -1,0 +1,9 @@
+.ex-description {
+    width: 80%;
+    margin: 0rem auto;
+    text-align: left;
+    background-color: #bdc3c7;
+    padding: 0.3rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+}

@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 /* *
  * Código de librerías internas
  * */ 
-import SelectPatient from './SelectPatient';
+import SelectList from './SelectList';
 import MiddleFormControl from './MiddleFormControl';
 import RedInputLabel from './RedInputLabel';
 import { getPatients } from '../Firebase/Patients';
@@ -52,15 +52,15 @@ class SelectPatientContainer extends Component {
 
     render() {
         return (
-        <MiddleFormControl 
-            variant="filled" 
-        >
-            <RedInputLabel>Paciente</RedInputLabel>
-            <SelectPatient
-                idPatient={this.state.idPatient} 
-                patients={this.state.patients} 
-                handleChange={this.handleChange} />
-        </MiddleFormControl>
+            <MiddleFormControl 
+                variant="filled" 
+            >
+                <RedInputLabel>Paciente</RedInputLabel>
+                <SelectList
+                    id={this.state.idPatient} 
+                    list={this.state.patients} 
+                    handleChange={this.handleChange} />
+            </MiddleFormControl>
         );
     }
 }

@@ -4,7 +4,8 @@ export function getPatients() {
     return firebase.database().ref('/patient/').once('value').then((res) => {
         var ar = [];
         Object.keys(res.val()).forEach(element => {
-           ar.push(res.val()[element]) 
+            const elementToPush = res.val()[element];
+           ar.push({ id: elementToPush.idPatient, name: elementToPush.name });
         });
         return ar;
     });
