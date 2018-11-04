@@ -5,12 +5,12 @@ export function getPatients() {
         var ar = [];
         Object.keys(res.val()).forEach(element => {
             const elementToPush = res.val()[element];
-           ar.push({ 
-               id: elementToPush.idPatient, 
-               name: elementToPush.name, 
-               beginDate: elementToPush.beginDate,
-               observations: elementToPush.observations,
-               age: elementToPush.age 
+            ar.push({ 
+                id: elementToPush.idPatient, 
+                name: elementToPush.name, 
+                beginDate: elementToPush.beginDate,
+                observations: elementToPush.observations,
+                age: elementToPush.age 
             });
         });
         return ar;
