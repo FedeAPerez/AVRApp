@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
  * */ 
 import SelectPatientContainer from './SelectPatientContainer';
 import SelectExerciseContainer from './SelectExerciseContainer';
+import SelectRepetitionsContainer from './SelectRepetitionsContainer';
 import { getToken } from '../Firebase/Session';
 import InformationBox from '../MaterialLikeComponents/InformationBox';
 import BeginSessionError from './BeginSessionError';
@@ -27,6 +28,7 @@ class BeginSessionView extends Component {
             isValid: false,
             patient: 0,
             exercise: 0,
+            repetitions: 1,
             creatingSession : true,
             token: '',
             errorCreating : false
@@ -35,6 +37,7 @@ class BeginSessionView extends Component {
         this.backToAction = this.backToAction.bind(this);
         this.handleChangePatient = this.handleChangePatient.bind(this);
         this.handleChangeExercise = this.handleChangeExercise.bind(this);
+        this.handleChangeRepetitions = this.handleChangeRepetitions.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -47,7 +50,7 @@ class BeginSessionView extends Component {
     }
 
     handleClick() {
-        getToken(this.state.patient, this.state.ex)
+        getToken(this.state.patient, this.state.exercise, this.state.repetitions)
         .then((res) => {
             this.setState((prevState, props) => {
                 return {
@@ -101,6 +104,16 @@ class BeginSessionView extends Component {
         });
     }
 
+    handleChangeRepetitions(repetitions, name) {
+        this.setState((prevState, props) => {
+            return {
+                repetitions : repetitions
+            }
+        }, () => {
+            this.validateSession();
+        });
+    }
+
     render() {
 
         return (
@@ -111,6 +124,7 @@ class BeginSessionView extends Component {
                     <section>
                     <SelectPatientContainer handleChangePatient={this.handleChangePatient} />
                     <SelectExerciseContainer handleChangeExercise={this.handleChangeExercise} />
+                    <SelectRepetitionsContainer handleChangeRepetitions={this.handleChangeRepetitions} />
                     <Button 
                         variant="contained" 
                         color="primary" 

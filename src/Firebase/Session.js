@@ -1,11 +1,13 @@
 import * as firebase from 'firebase';
 
-export function getToken(patientId) {
+export function getToken(patientId, exerciseId, repetitions) {
     let myInitConfiguation = 
     { 
         method: 'POST',
         body: JSON.stringify({
-            patientId : patientId
+            patientId : patientId,
+            exerciseId: exerciseId,
+            repetitions: repetitions
         }),
         headers: {
             'Content-Type': 'application/json'  
@@ -13,11 +15,25 @@ export function getToken(patientId) {
     };
 
     return fetch(process.env.REACT_APP_API_URL.replace(/ /g,'') + '/token', myInitConfiguation)
-    .then(res => res.json(), (error) => {return {hasError : true, errorDescription : error}})
     .then((res) => {
-        if(res.head.status != 200)
-            throw new Error("Error al generar token");
+            try { 
+                return res.json();
+            }
+            catch(err) {
+                console.log(err);
+                
+            }
+        }, (error) => {
+            return { 
+                hasError : true, errorDescription : error 
+            }
+    })
+    .then((res) => {
+        if(res.hasError) {
+            throw new Error("Fallo al cargar los ejercicios");
+        } else {
         return res;
+        }
     });
 }
 
