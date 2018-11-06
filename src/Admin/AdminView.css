@@ -52,18 +52,17 @@
     position: sticky;
     -ms-flex-align: center;
     align-items: center;
-    height: 3em;
+    height: 3.8rem;
     box-shadow: 0px 1.5px rgb(0, 0, 0, 0.16);
 }
 .admin-business-header-nav-container > span{
-    width: 33.333%;
+    width: 25%;
     display: -ms-inline-flexbox;
     display: inline-flex;
     overflow: hidden;
     -ms-flex-direction: row;
     flex-direction: column;
     clear: both;
-    height: 100%;
     position: relative;
     text-align: center;
     align-items: center;
@@ -74,12 +73,6 @@
     -webkit-transform: scale(1.5);
     -ms-transform: scale(1.5);
     vertical-align: bottom;
-    margin: 0em auto;
-    display: inline;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
 }
 .admin-navigation-item {
     cursor: pointer;

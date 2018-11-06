@@ -15,6 +15,7 @@ const Card = styled.div`
     padding: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    max-width: 90%;
 `;
 
 export default Card;

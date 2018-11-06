@@ -103,7 +103,7 @@ class AdminBusinessHeader extends Component {
                         defaultImage= { SETTINGS_IMAGE }
                         selectedImage= { SETTINGS_IMAGE_ACTIVE }
                         navigateOption= { this.navigateOption }
-                        showMessage= { "Configuración" }
+                        showMessage= { "Opciones" }
                     />
                 </section>
             </section>

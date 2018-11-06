@@ -16,7 +16,7 @@ import PatientsListContainer from './PatientsListContainer';
 class PatientsView extends Component {
     render() {
         return (
-            <SimpleSection>
+            <SimpleSection noLaterals>
                 <PatientsListContainer />
                 <CreateActionContainer />
             </SimpleSection>
