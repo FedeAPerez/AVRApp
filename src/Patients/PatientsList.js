@@ -10,7 +10,9 @@ const PatientsList = ({...props, children}) => {
                                 name = {element.name}
                                 age = { element.age}
                                 startDate= {element.beginDate}
-                                observations={ element.observations } 
+                                observations={ element.observations }
+                                editPatientHandler={ props.editPatientHandler }
+                                index={index} 
                                 key={"stat_patient_"+index} />
                     );
                 })

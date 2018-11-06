@@ -1,4 +1,3 @@
-// BlankFile.js
 /* *
  * Código de librerías externas
  * */
@@ -15,6 +14,7 @@ import AdminView from './Admin/AdminView';
 import NewActionView from './Actions/NewActionView';
 import BeginSessionView from './Session/BeginSessionView';
 import CreatePatientView from './Patients/New/CreatePatientView';
+import EditPatientView from './Patients/Edit/EditPatientView';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -42,9 +42,10 @@ class Router extends Component {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={LogIn} />
                 <Route exact path="/signup" component={SignUpView} />
-                <PrivateRoute path="/action/new" component={NewActionView} />
-                <PrivateRoute path="/session/new" component={BeginSessionView} />
-                <PrivateRoute path="/patient/new" component={CreatePatientView} />
+                <PrivateRoute exact path="/action/new" component={NewActionView} />
+                <PrivateRoute exact path="/session/new" component={BeginSessionView} />
+                <PrivateRoute exact path="/patient/edit/:patient" component={EditPatientView} />
+                <PrivateRoute exact path="/patient/new" component={CreatePatientView} />
                 <PrivateRoute path="/admin/:user" component={AdminView} />
             </Switch>
         );

@@ -3,6 +3,7 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 /* *
  * Código de librerías internas
@@ -16,7 +17,17 @@ import { startFetching, finishedFetching } from '../redux/actions/actions';
 class PatientsListContainer extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+
+        this.state = {
+            redirect : false
+        };
+
+        this.handlePatientChange = this.handlePatientChange.bind(this)
+    }
+
+    handlePatientChange(e, index) {
+        e.preventDefault();
+        this.setState({ redirect: true, redirectLoc: this.state.patients[index].id }) 
     }
 
     componentDidMount() {
@@ -37,9 +48,16 @@ class PatientsListContainer extends Component {
     }
 
     render() {
-        return (
-            <PatientsList patients = { this.state.patients }/>
-        );
+        const { redirect, redirectLoc } = this.state;
+        if(redirect) {
+            return <Redirect to={'/patient/edit/'+redirectLoc} />
+        } else {
+            return (
+                <PatientsList 
+                    patients={ this.state.patients } 
+                    editPatientHandler={ this.handlePatientChange } />
+            );
+        }
     }
 }
 

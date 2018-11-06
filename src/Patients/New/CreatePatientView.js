@@ -65,4 +65,4 @@ class CreatePatientView extends Component {
     }
 }
 
-export default (CreatePatientView);
+export default CreatePatientView;
