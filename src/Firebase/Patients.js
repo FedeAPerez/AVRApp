@@ -52,3 +52,28 @@ export function deletePatient(idPatient) {
         };
     });
 }
+
+export function getPatient(idPatient) {
+    let myInitConfiguation = 
+    { 
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'  
+        },
+    };
+
+    return fetch(process.env.REACT_APP_API_URL.replace(/ /g,'') + '/patient/'+idPatient, myInitConfiguation)
+    .then((res) => {
+            try { 
+                return res.json();
+            }
+            catch(err) {
+                console.log(err);
+                
+            }
+        }, (error) => {
+            return { 
+                hasError : true, errorDescription : error 
+            }
+    });
+}

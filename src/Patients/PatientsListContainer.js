@@ -32,7 +32,7 @@ class PatientsListContainer extends Component {
 
     componentDidMount() {
         const { dispatch } = this.props;
-        dispatch(startFetching())
+        dispatch(startFetching());
         getPatients()
         .then((res) => {
             this.setState((prevState, props) => {

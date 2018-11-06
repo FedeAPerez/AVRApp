@@ -17,4 +17,5 @@
     vertical-align: middle;
     margin: 0em auto;
     display: block;
+    z-index: 15;
 }
