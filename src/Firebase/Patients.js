@@ -17,10 +17,12 @@ export function getPatients() {
     });
 }
 
-export function createModifyPatient(patient) {
-    const actualDate = new Date();
-    const beginDate = actualDate.getDate() + '/' + (actualDate.getMonth() + 1) + '/' + actualDate.getFullYear();
-    patient.beginDate = beginDate;
+export function createModifyPatient(patient, modify = false) {
+    if(!modify) {
+        const actualDate = new Date();
+        const beginDate = actualDate.getDate() + '/' + (actualDate.getMonth() + 1) + '/' + actualDate.getFullYear();
+        patient.beginDate = beginDate;
+    }
     firebase.database().ref('/patient/' + patient.idPatient).set(patient);
 }
 

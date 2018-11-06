@@ -2,11 +2,12 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 /* *
  * Código de librerías internas
  * */ 
 import EditPatientForm from './EditPatientForm';
-import { createModifyPatient } from '../../Firebase/Patients';
+import { deletePatient, createModifyPatient } from '../../Firebase/Patients';
 
 /* *
  * Hojas de Estilo y Constantes
@@ -21,20 +22,21 @@ class EditPatientFormContainer extends Component {
             isValid: false
         };
         
-        this.handleClick = this.handleClick.bind(this);
         this.handleAgeChange = this.handleAgeChange.bind(this);
         this.handleNameChange = this.handleNameChange.bind(this);
+        this.handleDeletePatient = this.handleDeletePatient.bind(this);
+        this.handleModification = this.handleModification.bind(this);
     }
 
-    handleClick() {
-        createModifyPatient(this.state.editPatient);
-        this.setState((prevState, props) => {
-            return {
-                isValid: false
-            };
+
+    
+    handleDeletePatient() {
+        deletePatient(this.state.editPatient.idPatient)
+        .then((res) => {
+            this.props.handleDeletePatient();
         });
     }
-    
+
     validateSession() {
         this.setState((prevState, props) => {
             return {
@@ -68,8 +70,17 @@ class EditPatientFormContainer extends Component {
         });
     }
 
+    handleModification() {
+        createModifyPatient(this.state.editPatient, true);
+        this.setState((prevState, props) => {
+            return {
+                isValid: false
+            };
+        });
+    }
     render() {
         return (
+            <section>
             <EditPatientForm 
                 handleAgeChange={this.handleAgeChange}
                 handleNameChange={this.handleNameChange}
@@ -77,6 +88,23 @@ class EditPatientFormContainer extends Component {
                 editPatient={this.state.editPatient}
                 isValid = {this.state.isValid}
             />
+            <section className="buttonsSelector">
+            <Button 
+                variant="contained" 
+                onClick={this.handleDeletePatient}
+            >
+                Eliminar
+            </Button>
+            <Button 
+                variant="contained"
+                color="primary" 
+                onClick={this.handleModification}
+                disabled={!this.state.isValid}
+            >
+                Guardar
+            </Button>
+            </section>
+            </section>
         );
     }
 }

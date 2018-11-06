@@ -1,11 +1,15 @@
 
 .InformationBox {
     margin: 2rem;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-align: center;
     align-items: center;
-    border: 2px solid rgb(0, 0, 0, 0.1);
-    border-radius: 1rem;
+    background-color: hsl(0, 0%, 96%);
     padding: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-left: 6px solid;
 }
 
 .InformationBox span {

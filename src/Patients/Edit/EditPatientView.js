@@ -2,7 +2,6 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
 import { connect } from 'react-redux';
 
 /* *
@@ -12,7 +11,7 @@ import TopBar from '../../MaterialLikeComponents/TopBar';
 import LoaderContainer from '../../Admin/LoaderContainer';
 import InformationBox from '../../MaterialLikeComponents/InformationBox';
 import EditPatientFormContainer from './EditPatientFormContainer';
-import { deletePatient, getPatient } from '../../Firebase/Patients';
+import { getPatient } from '../../Firebase/Patients';
 import { startFetching, finishedFetching } from '../../redux/actions/actions';
 /* *
  * Hojas de Estilo y Constantes
@@ -70,18 +69,11 @@ class EditPatientView extends Component {
     }
 
     handleDeletePatient() {
-        deletePatient(this.state.patient.idPatient)
-        .then((res) => {
-            this.setState((prevState, props) => {
-                return {
-                    deletedOk : true
-                };
-            });
+        this.setState((prevState, props) => {
+            return {
+                deletedOk : true
+            };
         });
-    }
-
-    handleModification() {
-        console.log("saving");
     }
 
     render() {
@@ -103,30 +95,10 @@ class EditPatientView extends Component {
                     
                 }
                 {
-                    (!this.state.deletedOk && !this.state.missingPatient) &&
-                    <section>
-                        { 
-                            this.state.patient &&
-                            <EditPatientFormContainer editPatient={this.state.patient} />
-                        }
-                        
-                        <section className="buttonsSelector">
-                            <Button 
-                                variant="contained" 
-                                onClick={this.handleDeletePatient}
-                            >
-                                Eliminar
-                            </Button>
-                            <Button 
-                                variant="contained"
-                                color="primary" 
-                                onClick={this.handleModification}
-                                disabled={!this.state.isValid}
-                            >
-                                Guardar
-                            </Button>
-                        </section>
-                    </section>
+                    (!this.state.deletedOk && !this.state.missingPatient && this.state.patient) &&
+                    <EditPatientFormContainer 
+                        handleDeletePatient={ this.handleDeletePatient }
+                        editPatient={this.state.patient} />
                 }
                 
                 <LoaderContainer />
