@@ -9,13 +9,13 @@ const Card = styled.div`
     position: ${ props => props.relative ? 'relative' : 'initial'}
     
     margin-bottom: 1rem;
-
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 0px;
     border-radius: 1rem;
     padding: 1.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 90%;
+    box-sizing: content-box;
+    background-color: #f5f6fa;
 `;
 
 export default Card;
