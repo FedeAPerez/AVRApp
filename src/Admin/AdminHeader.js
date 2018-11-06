@@ -35,6 +35,8 @@ class AdminBusinessHeader extends Component {
             'option_selected':'patients',
             'show_option':'Pacientes'
         };
+        // binding de funciones
+        this.navigateOption = this.navigateOption.bind(this)
     }
 
     navigateOption(e, value, show_message) {
@@ -55,7 +57,7 @@ class AdminBusinessHeader extends Component {
             >
                 <Link 
                     className= { __BUSINESS_HEADER_CLASS_LINK }
-                    to="/"
+                    to="/login"
                 >
                     <span 
                     >
@@ -76,7 +78,7 @@ class AdminBusinessHeader extends Component {
                         isSelected= { this.state.option_selected === "patients" }
                         defaultImage= { PATIENT }
                         selectedImage= { PATIENT_ACTIVE }
-                        navigateOption= { this.navigateOption.bind(this) }
+                        navigateOption= { this.navigateOption }
                         showMessage= { "Pacientes" }
                     />
                     <NavigationItem 
@@ -84,7 +86,7 @@ class AdminBusinessHeader extends Component {
                         isSelected= { this.state.option_selected === "sessions" }
                         defaultImage= { SESSIONS }
                         selectedImage= { SESSIONS_ACTIVE }
-                        navigateOption= { this.navigateOption.bind(this) }
+                        navigateOption= { this.navigateOption }
                         showMessage= { "Sesiones" }
                     />
                     <NavigationItem 
@@ -92,7 +94,7 @@ class AdminBusinessHeader extends Component {
                         isSelected= { this.state.option_selected === "stats" }
                         defaultImage= { STATS }
                         selectedImage= { STATS_ACTIVE }
-                        navigateOption= { this.navigateOption.bind(this) }
+                        navigateOption= { this.navigateOption }
                         showMessage= { "Estadísticas" }
                     />
                     <NavigationItem 
@@ -100,7 +102,7 @@ class AdminBusinessHeader extends Component {
                         isSelected= { this.state.option_selected === "settings" }
                         defaultImage= { SETTINGS_IMAGE }
                         selectedImage= { SETTINGS_IMAGE_ACTIVE }
-                        navigateOption= { this.navigateOption.bind(this) }
+                        navigateOption= { this.navigateOption }
                         showMessage= { "Configuración" }
                     />
                 </section>

@@ -2,7 +2,7 @@
 /* *
  * Código de librerías externas
  * */
-import React, { Component } from 'react';
+import React from 'react';
 /* *
  * Código de librerías internas
  * */ 
@@ -10,19 +10,18 @@ import React, { Component } from 'react';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
+import './NavigationItem.css';
 
-class NavigationItem extends Component {
-
-	render() {
-		return (
-			<span 
-                className= { this.props.isSelected ? 'resalt' : 'admin-navigation-item' }
-                onClick={ (e) => this.props.navigateOption(e, this.props.value , this.props.showMessage) }
-            >
-                <img src={ this.props.isSelected ? this.props.selectedImage : this.props.defaultImage } alt="Navegación" />
-            </span>
-		);
-	}
+const NavigationItem = ({...props, children}) => {
+    return (
+        <span 
+            className= { props.isSelected ? 'resalt' : 'admin-navigation-item' }
+            onClick={ (e) => props.navigateOption(e, props.value , props.showMessage) }
+        >
+            <img src={ props.isSelected ? props.selectedImage : props.defaultImage } alt="Navegación" />
+            <span className="navigation-subtitle">{props.showMessage}</span>
+        </span>
+    );
 }
 
 export default NavigationItem;
