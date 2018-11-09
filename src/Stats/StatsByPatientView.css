@@ -1,0 +1,58 @@
+.statsSection {
+    display: block;
+    background-color: hsl(0, 0%, 96%);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+
+.statsName {
+    text-align: left;
+    margin-left: 1rem;
+    font-family: Rubik, sans-serif;
+    font-weight: 400;
+    color: hsl(0, 0%, 50%);
+}
+
+.statsInformation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.statsInformationItem {
+    font-family: Rubik, sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.statsInformationItem > span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #7f8c8d;
+}
+
+.statsAclaration {
+    font-family: Rubik, sans-serif;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+    align-items: center;
+    flex-direction: row;
+}
+
+.statsAclaration > .data {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+.statsAclaration > .disclaimer {
+    text-align: left;
+}
+
+.bolder {
+    font-weight: 500;
+}

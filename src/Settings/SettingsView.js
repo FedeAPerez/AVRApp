@@ -45,7 +45,7 @@ class SettingsView extends Component {
                     <Setting
                         disabled 
                         settingName= "Acerca de Ataxia Visión" 
-                        settingDescrption= "Versión Demo - Ingresá para ver actualizaciones" />
+                        settingDescrption= "Versión 1.0.0" />
                     <Setting 
                         settingName="Cerrar Sesión" 
                         onClick={ this.closeSession.bind(this)} />
