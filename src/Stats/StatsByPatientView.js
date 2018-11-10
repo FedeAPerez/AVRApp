@@ -3,7 +3,7 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 /* *
  * Código de librerías internas
@@ -46,16 +46,18 @@ class StatsByPatientView extends Component {
                             </div>
                             {
                                 element.adjustmentsDetected != 0 &&
-                            <section>
-                            <AreaChart width={350} height={150} data={element.graphData}
-                                    margin={{top: 10, right: 30, left: 0, bottom: 0}}>
-                                <CartesianGrid strokeDasharray="3 3"/>
-                                <XAxis dataKey="name"/>
-                                <YAxis/>
-                                <Tooltip/>
-                                <Area type='monotone' dataKey='uv' stroke='#c0392b' fill='#e74c3c' />
-                            </AreaChart>
-                            </section>
+                                <section className="chartContainer">
+                                <ResponsiveContainer>
+                                    <AreaChart data={element.graphData}
+                                            margin={{top: 10, right: 30, left: -10, bottom: 0}}>
+                                        <CartesianGrid strokeDasharray="3 3"/>
+                                        <XAxis dataKey="name"/>
+                                        <YAxis/>
+                                        <Tooltip/>
+                                        <Area type='monotone' dataKey='uv' stroke='#c0392b' fill='#e74c3c' />
+                                    </AreaChart>
+                                </ResponsiveContainer>
+                                </section>
                             }
                             <section className="statsInformation">
                                 <div className="statsInformationItem">{element.exercisesMade}<span>Ejercicios</span></div>

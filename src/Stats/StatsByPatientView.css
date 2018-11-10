@@ -56,3 +56,9 @@
 .bolder {
     font-weight: 500;
 }
+
+.chartContainer {
+    width: 90%;
+    height: 150px;
+    margin: 0rem auto;
+}
