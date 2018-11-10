@@ -3,6 +3,8 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+import { LineChart, Line } from 'recharts';
+
 /* *
  * Código de librerías internas
  * */ 
@@ -42,6 +44,11 @@ class StatsByPatientView extends Component {
                                 <span className="data">{element.adjustmentsDetected}</span> 
                                 <span className="disclaimer"><span className="bolder">Desvíos detectados</span> entre el primer y el último ejercicio</span>
                             </div>
+                            <section>
+                                <LineChart width={350} height={150} data={element.graphData}>
+                                <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                                </LineChart>
+                            </section>
                             <section className="statsInformation">
                                 <div className="statsInformationItem">{element.exercisesMade}<span>Ejercicios</span></div>
                                 <div className="statsInformationItem">{element.sessionsMade}<span>Sesiones</span></div>
