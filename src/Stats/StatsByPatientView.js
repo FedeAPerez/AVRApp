@@ -39,7 +39,7 @@ class StatsByPatientView extends Component {
                         <section className="statsSection" key={"patient_stats_"+index}>
                             <div className="statsName">{element.name}</div>
                             <div className="statsAclaration">
-                                <span className="data">{element.adjustmentsLess}</span> 
+                                <span className="data">{element.adjustmentsDetected}</span> 
                                 <span className="disclaimer"><span className="bolder">Desvíos detectados</span> entre el primer y el último ejercicio</span>
                             </div>
                             <section className="statsInformation">
