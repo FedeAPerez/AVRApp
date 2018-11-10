@@ -9,7 +9,7 @@ export function getPatients() {
                 id: elementToPush.idPatient, 
                 name: elementToPush.name, 
                 beginDate: elementToPush.beginDate,
-                observations: elementToPush.observations,
+                comment: elementToPush.comment,
                 age: elementToPush.age 
             });
         });

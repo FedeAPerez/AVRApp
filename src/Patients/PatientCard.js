@@ -23,8 +23,8 @@ const PatientCard = ({ ...props, children}) => {
             <SimpleSection noPadding noLaterals relative>
             <Text noMargin><BoldText>{props.name}</BoldText> {props.age} años.</Text>
                 <Text noMargin topMargin><BoldText>Comenzó el tratamiento: </BoldText>{props.startDate}</Text>
-                {   props.observations &&
-                    <Text secondary noMargin topMargin><BoldText>Observaciones: </BoldText>{props.observations}</Text>
+                {   props.comment &&
+                    <Text secondary noMargin topMargin><BoldText>Observaciones: </BoldText>{props.comment}</Text>
                 }
             </SimpleSection>
         </Card>
