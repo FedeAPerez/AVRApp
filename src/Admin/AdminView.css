@@ -72,6 +72,7 @@
 .admin-business-header-nav-container span img{
     -webkit-transform: scale(1.5);
     -ms-transform: scale(1.5);
+    transform: scale(1.5);
     vertical-align: bottom;
 }
 .admin-navigation-item {
@@ -79,4 +80,12 @@
 }
 .resalt {
     border-bottom: 3px solid #ac1710;
+}
+
+@media(min-width: 800px) {
+    .admin-business-header-nav-container span img{
+        -webkit-transform: scale(2);
+        -ms-transform: scale(2);
+        transform: scale(2);
+    }
 }

@@ -62,3 +62,28 @@
     height: 150px;
     margin: 0rem auto;
 }
+
+@media(min-width: 600px) {
+    .disclaimer {
+        font-size: 1.5rem;
+    }
+}
+
+@media(min-width: 800px) {
+    .disclaimer {
+        font-size: 1.6rem;
+        margin-left: -2.5rem;
+    }
+}
+
+@media(min-width: 1200px) {
+    .disclaimer {
+        font-size: 2.4rem;
+    }
+
+    .chartContainer {
+        width: 90%;
+        height: 300px;
+        margin: 0rem auto;
+    }
+}
