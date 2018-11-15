@@ -44,14 +44,20 @@ function getPatients() {
         return firebase.database().ref('/patient/').once('value').then((res) => {
             let listOfPatients = [];
             let listOfValues = res.val();
-            let listOfKeys = Object.keys(listOfValues);
-            listOfKeys.forEach(element => {
-                listOfPatients.push({ 
-                    name : listOfValues[element].name, 
-                    idPatient : listOfValues[element].idPatient
-                }); 
-            });
+            if(res.val()) {
+                let listOfKeys = Object.keys(listOfValues);
+                listOfKeys.forEach(element => {
+                    listOfPatients.push({ 
+                        name : listOfValues[element].name, 
+                        idPatient : listOfValues[element].idPatient
+                    }); 
+                });
+                
             resolve(listOfPatients);
+            }   
+            else {
+                reject();
+            }
         });
     });
 }
