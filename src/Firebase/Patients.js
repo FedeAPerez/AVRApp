@@ -3,16 +3,21 @@ import * as firebase from 'firebase';
 export function getPatients() {
     return firebase.database().ref('/patient/').once('value').then((res) => {
         var ar = [];
-        Object.keys(res.val()).forEach(element => {
-            const elementToPush = res.val()[element];
-            ar.push({ 
-                id: elementToPush.idPatient, 
-                name: elementToPush.name, 
-                beginDate: elementToPush.beginDate,
-                comment: elementToPush.comment,
-                age: elementToPush.age 
+        if(res.val()) {
+            Object.keys(res.val()).forEach(element => {
+                const elementToPush = res.val()[element];
+                ar.push({ 
+                    id: elementToPush.idPatient, 
+                    name: elementToPush.name, 
+                    beginDate: elementToPush.beginDate,
+                    comment: elementToPush.comment,
+                    age: elementToPush.age 
+                });
             });
-        });
+        }
+        else {
+            
+        }
         return ar;
     });
 }
