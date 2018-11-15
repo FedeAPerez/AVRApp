@@ -7,7 +7,7 @@ var config = {
     projectId: "avn-env-prod",
     storageBucket: "avn-env-prod.appspot.com",
     messagingSenderId: "68354630269"
-  };
+};
 
 firebase.initializeApp(config);
 const auth = firebase.auth();
