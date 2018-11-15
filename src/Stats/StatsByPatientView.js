@@ -36,6 +36,15 @@ class StatsByPatientView extends Component {
                 dispatch(finishedFetching());
             });
         })
+        .catch((err) => {
+            this.setState((prevState, props) => {
+                return {
+                    stats : []
+                };
+            }, () => {
+                dispatch(finishedFetching());
+            });
+        })
     }
     render() {
         return (
