@@ -39,6 +39,9 @@ class PatientSessionListContainer extends Component {
         .catch((err) => {
             this.setState((prevState, props) => {
                 message : "Parece que tenemos problemas para cargar la información"
+            }, () => {
+                
+                dispatch(finishedFetching());
             });
         });
     }

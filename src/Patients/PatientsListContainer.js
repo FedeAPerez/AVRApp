@@ -44,6 +44,7 @@ class PatientsListContainer extends Component {
         })
         .catch((err) => {
             console.log(err);
+            dispatch(finishedFetching());
         })
     }
 
