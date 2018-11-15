@@ -27,18 +27,23 @@ class PatientSessionListContainer extends Component {
         dispatch(startFetching())
         loadSessions()
         .then((res) => {
-            this.setState((prevState, props) => {
-                let sessionsData = [];
-                res.forEach((x) => {
-                    sessionsData.push(Object.assign({}, x));
-                })
-                return { sessionsData : sessionsData}
-            });
-            dispatch(finishedFetching());
+            if(res) {
+                this.setState((prevState, props) => {
+                    let sessionsData = [];
+                    res.forEach((x) => {
+                        sessionsData.push(Object.assign({}, x));
+                    })
+                    return { sessionsData : sessionsData}
+                });
+                dispatch(finishedFetching());
+            }
+            else {
+                throw new Error("Sin información de pacientes");
+            }
         })
         .catch((err) => {
             this.setState((prevState, props) => {
-                message : "Parece que tenemos problemas para cargar la información"
+                message : "Parece que todavía no hay datos de pacientes."
             }, () => {
                 
                 dispatch(finishedFetching());

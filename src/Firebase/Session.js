@@ -53,7 +53,7 @@ function getPatients() {
                     }); 
                 });
                 
-            resolve(listOfPatients);
+                resolve(listOfPatients);
             }   
             else {
                 reject();
