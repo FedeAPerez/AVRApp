@@ -47,7 +47,7 @@ class CreatePatientFormContainer extends Component {
     validateSession() {
         this.setState((prevState, props) => {
             return {
-                isValid : prevState.newPatient.name != '' && prevState.newPatient.age != 0 && prevState.newPatient.idPatient != ''
+                isValid : prevState.newPatient.name != '' && prevState.newPatient.age != 0 && (prevState.newPatient.idPatient != 0 && prevState.newPatient.idPatient.length >= 7)
             };
         });
     }

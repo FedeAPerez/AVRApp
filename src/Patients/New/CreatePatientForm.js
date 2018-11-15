@@ -33,6 +33,7 @@ const CreatePatientForm = ({...props, children}) => {
                 value={props.newPatient.idPatient}
                 onChange={props.handleIdChange}
                 margin="normal"
+                type="number"
                 variant="filled"
                 className={classes.textField}
                 />
