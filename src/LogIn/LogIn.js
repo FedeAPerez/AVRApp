@@ -32,6 +32,8 @@ class UserContainer extends Component {
         };
         
         this.handleChangeByName = this.handleChangeByName.bind(this);
+
+        this.checkEnabledButton();
     }
     authUser() {
         const { dispatch } = this.props;
