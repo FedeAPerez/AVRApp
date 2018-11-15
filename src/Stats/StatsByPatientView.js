@@ -10,7 +10,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
  * Código de librerías internas
  * */ 
 import { getStats } from '../Firebase/Stats';
-import {startFetching, finishedFetching} from '../../redux/actions/actions';
+import {startFetching, finishedFetching} from '../redux/actions/actions';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
