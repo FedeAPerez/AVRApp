@@ -43,7 +43,9 @@ class PatientSessionListContainer extends Component {
         })
         .catch((err) => {
             this.setState((prevState, props) => {
-                message : "No tenemos datos para mostrarte por acá, registrá pacientes nuevos y empezá a ver tus datos actualizados."
+                return {
+                    message : "No tenemos datos para mostrarte por acá, registrá pacientes nuevos y empezá a ver tus datos actualizados."
+                };
             }, () => {
                 
                 dispatch(finishedFetching());
