@@ -3,12 +3,14 @@
  * Código de librerías externas
  * */
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 /* *
  * Código de librerías internas
  * */ 
 import { getStats } from '../Firebase/Stats';
+import {startFetching, finishedFetching} from '../../redux/actions/actions';
 /* *
  * Hojas de Estilo y Constantes
  * */ 
@@ -22,12 +24,16 @@ class StatsByPatientView extends Component {
         };
     }
     componentDidMount() {
+        const { dispatch } = this.props;
+        dispatch(startFetching());
         getStats()
         .then((res) => {
             this.setState((prevState, props) => {
                 return {
                     stats : res.listOfStats
                 };
+            }, () => {
+                dispatch(finishedFetching());
             });
         })
     }
@@ -74,4 +80,4 @@ class StatsByPatientView extends Component {
     }
 }
 
-export default StatsByPatientView;
+export default connect()(StatsByPatientView);
