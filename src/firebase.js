@@ -1,12 +1,12 @@
 import * as firebase from 'firebase';
 
 var config = {
-    apiKey: "AIzaSyAdcpqgLvibIjxI11ltuRpdQO2qZL6oeE4",
-    authDomain: "app-core-6d96d.firebaseapp.com",
-    databaseURL: "https://app-core-6d96d.firebaseio.com",
-    projectId: "app-core-6d96d",
-    storageBucket: "app-core-6d96d.appspot.com",
-    messagingSenderId: "35365703643"
+    apiKey: "AIzaSyCqdPh_ZXfcJcTAgCooL0eHYVCsF7kReb8",
+    authDomain: "avn-env-prod.firebaseapp.com",
+    databaseURL: "https://avn-env-prod.firebaseio.com",
+    projectId: "avn-env-prod",
+    storageBucket: "avn-env-prod.appspot.com",
+    messagingSenderId: "68354630269"
   };
 
 firebase.initializeApp(config);
