@@ -28,13 +28,18 @@ class StatsByPatientView extends Component {
         dispatch(startFetching());
         getStats()
         .then((res) => {
-            this.setState((prevState, props) => {
-                return {
-                    stats : res.listOfStats
-                };
-            }, () => {
-                dispatch(finishedFetching());
-            });
+            if(res) {
+                this.setState((prevState, props) => {
+                    return {
+                        stats : res.listOfStats
+                    };
+                }, () => {
+                    dispatch(finishedFetching());
+                });
+            }
+            else {
+                throw new Error("Sin datos de análisis");
+            }
         })
         .catch((err) => {
             this.setState((prevState, props) => {
@@ -82,6 +87,10 @@ class StatsByPatientView extends Component {
                         </section>
                     );
                 })
+            }
+            {
+                this.state.stats.length == 0 &&
+                <span className="global-message">No tenemos datos de sesiones para crear reportes, registrá pacientes nuevos y empezá a ver tus datos actualizados.</span>
             }
             </section>
         
