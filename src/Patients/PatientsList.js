@@ -19,7 +19,7 @@ const PatientsList = ({...props, children}) => {
             );
         }
         else {
-            return ( <span>Todavía no tenés pacientes. Creá uno para empezar.</span> );
+            return ( <span className="global-message">Todavía no tenés pacientes. Creá uno para empezar.</span> );
         }
 };
 

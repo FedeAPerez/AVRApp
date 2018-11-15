@@ -19,3 +19,13 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+.global-message {
+  background-color: hsl(0, 0%, 97%);
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  display: block;
+  font-family: Rubik, sans-serif;
+  margin: 1rem;
+}

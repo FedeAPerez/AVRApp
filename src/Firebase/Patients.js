@@ -16,7 +16,7 @@ export function getPatients() {
             });
         }
         else {
-            
+            throw new Error("No hay pacientes registrados")
         }
         return ar;
     });
