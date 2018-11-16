@@ -49,6 +49,7 @@ function reduceTwoExToSessions(listOfEx) {
 }
 
 const PatientSessionList = ({...props, children}) => {
+    console.log(props.sessions);
     return (
         <section>
             <Text secondary noMargin withPadding withBackground>{props.name}</Text>
