@@ -97,10 +97,12 @@ async function getSessionsXPatientsv2(listOfPatients) {
             for (const value in listOfPatients) {
                 await firebase.database().ref('/session/'+ listOfPatients[value].idPatient).once('value').then((res) => {
                     let listOfValues = res.val();
+                    console.table(res.val());
                     if(listOfValues) {
+                        let list = Object.values(listOfValues);
                         listOfSessionsByPatient.push({
                             name : listOfPatients[value].name,
-                            sessions: listOfValues, 
+                            sessions: list, 
                             idPatient: listOfPatients[value].idPatient
                         });
                     }
@@ -125,11 +127,9 @@ export function loadSessions() {
 
         return getPatients()
         .then((responsePatients) => {
-            console.log(responsePatients);
             return responsePatients;
         })
         .then((patients) => {
-            console.log(patients);
             return getSessionsXPatientsv2(patients)
             .then((responseSessionsPatients) => {
                 console.log(responseSessionsPatients);

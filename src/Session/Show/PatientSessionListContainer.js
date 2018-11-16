@@ -32,6 +32,7 @@ class PatientSessionListContainer extends Component {
                     res.forEach((x) => {
                         sessionsData.push(Object.assign({}, x));
                     })
+                    console.table(sessionsData);
                     return { sessionsData }
                 });
                 dispatch(finishedFetching());
