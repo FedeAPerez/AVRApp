@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, BoldText } from '../../ComponentsLibrary/Text';
 import Emoji from '../../MaterialLikeComponents/Emoji';
 
-function reduceTwoExToSessions(listOfEx) {
+function recudeMultipleExtToSession(listOfEx) {
     let reduced ={
         adjustments : 0,
         okExercises : 0,
@@ -10,6 +10,8 @@ function reduceTwoExToSessions(listOfEx) {
         sessionDate : "",
         duration : 0
     }
+
+    console.table(listOfEx);
     
     for(const ex in listOfEx) {
         // Ajustes
@@ -32,6 +34,7 @@ function reduceTwoExToSessions(listOfEx) {
         }
         catch(err) {
             reduced.sessionDate = "Sin fecha asignada";
+            console.error(err);
         }
 
         // Obtención de duración
@@ -42,20 +45,21 @@ function reduceTwoExToSessions(listOfEx) {
             reduced.duration = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
         }
         catch(err) {
-            //console.error(err);
+            console.error(err);
         }
     };
     return reduced;
 }
 
 const PatientSessionList = ({...props, children}) => {
+    console.log(props.sessions);
     return (
         <section>
             <Text secondary noMargin withPadding withBackground>{props.name}</Text>
             {
                 props.sessions && props.sessions.length > 0 && 
                 props.sessions.map((element, index) => {
-                    const reduceFromSessionsToExer = reduceTwoExToSessions(element);
+                    const reduceFromSessionsToExer = recudeMultipleExtToSession(element);
 
                     const shouldRenderAdjustments = reduceFromSessionsToExer.adjustments && reduceFromSessionsToExer.adjustments > 0;
                     const shouldHaveBreak = props.sessions.length > 1 && index !== (props.sessions.length -1);
@@ -88,7 +92,7 @@ const PatientSessionList = ({...props, children}) => {
                 })
             }
             {
-                (!props.sessions || props.sessions.length === 0) &&
+                (!props.sessions || props.sessions.length == 0) &&
                 <Text lateralMargin>Todavía no tenemos información de sesiones de este paciente.</Text>
             }
         </section>
