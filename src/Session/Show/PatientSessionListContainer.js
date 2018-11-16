@@ -30,8 +30,10 @@ class PatientSessionListContainer extends Component {
                 this.setState((prevState, props) => {
                     let sessionsData = [];
                     res.forEach((x) => {
+                        console.table(x);
                         sessionsData.push(Object.assign({}, x));
                     })
+                    console.table(sessionsData);
                     return { sessionsData }
                 });
                 dispatch(finishedFetching());

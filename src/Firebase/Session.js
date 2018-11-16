@@ -97,6 +97,7 @@ async function getSessionsXPatientsv2(listOfPatients) {
             for (const value in listOfPatients) {
                 await firebase.database().ref('/session/'+ listOfPatients[value].idPatient).once('value').then((res) => {
                     let listOfValues = res.val();
+                    console.table(res.val());
                     if(listOfValues) {
                         listOfSessionsByPatient.push({
                             name : listOfPatients[value].name,
