@@ -98,7 +98,6 @@ async function getSessionsXPatientsv2(listOfPatients) {
                 await firebase.database().ref('/session/'+ listOfPatients[value].idPatient).once('value').then((res) => {
                     let listOfValues = res.val();
                     if(listOfValues) {
-                        // Doy ejercicios acerca de los que tuvieron rehabilitación
                         listOfSessionsByPatient.push({
                             name : listOfPatients[value].name,
                             sessions: listOfValues, 
@@ -126,11 +125,14 @@ export function loadSessions() {
 
         return getPatients()
         .then((responsePatients) => {
+            console.log(responsePatients);
             return responsePatients;
         })
         .then((patients) => {
+            console.log(patients);
             return getSessionsXPatientsv2(patients)
             .then((responseSessionsPatients) => {
+                console.log(responseSessionsPatients);
                 return responseSessionsPatients;
             })
             .catch(() => {

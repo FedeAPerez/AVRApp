@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
  * Código de librerías internas
  * */ 
 import PatientSessionList from './PatientSessionList';
-import Text from '../../ComponentsLibrary/Text';
 import { loadSessions } from '../../Firebase/Session';
 import {startFetching, finishedFetching} from '../../redux/actions/actions';
 /* *
@@ -19,7 +18,7 @@ class PatientSessionListContainer extends Component {
         super(props);
         this.state = {
             message: "Estamos cargando tu información",
-            sessionsData : null
+            sessionsData : []
         };
     }
     componentDidMount() {
@@ -33,7 +32,7 @@ class PatientSessionListContainer extends Component {
                     res.forEach((x) => {
                         sessionsData.push(Object.assign({}, x));
                     })
-                    return { sessionsData : sessionsData}
+                    return { sessionsData }
                 });
                 dispatch(finishedFetching());
             }
@@ -68,7 +67,7 @@ class PatientSessionListContainer extends Component {
             ]*/
             this.state.sessionsData ?
             this.state.sessionsData.map((element, index) => {
-
+                console.log(element);
                 return (
                     <PatientSessionList 
                         name= {element.name} 
