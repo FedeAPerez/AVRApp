@@ -18,12 +18,14 @@ class NewActionView extends Component {
         this.state = {
             goBack : false,
             goPatient : false,
-            goSession : false
+            goSession : false,
+            goToInvalidSession: false
         };
 
         this.backToAction = this.backToAction.bind(this);
         this.goToPatient = this.goToPatient.bind(this);
         this.goToSession = this.goToSession.bind(this);
+        this.goToInvalidSession = this.goToInvalidSession.bind(this);
     }
 
 
@@ -50,6 +52,14 @@ class NewActionView extends Component {
             };
         });
     }
+    goToInvalidSession() {
+        this.setState((prevState, props) => {
+            return {
+                goToInvalidSession : true
+            };
+        });
+    }
+
 
     render() {
         if(this.state.goBack) {
@@ -60,6 +70,11 @@ class NewActionView extends Component {
         else if (this.state.goPatient){
             return (
                 <Redirect to="/patient/new" />
+            );
+        }
+        else if(this.state.goToInvalidSession) {
+            return (
+                <Redirect to="/session/restore" />
             );
         }
         else if (this.state.goSession){
@@ -77,6 +92,7 @@ class NewActionView extends Component {
                     </section>
                     <Setting onClick={this.goToPatient} settingName={"Registrar Paciente"}>Con pocos datos podés empezar a trabajar.</Setting>
                     <Setting onClick={this.goToSession} settingName={"Iniciar Rehabilitación"}>Elegí uno de tus pacientes para rehabilitar.</Setting>
+                    <Setting onClick={this.goToInvalidSession} settingName={"Sesiones sin vincular"}>Elegí uno de tus pacientes para asignar una sesión que haya quedado errónea.</Setting>
                 </section>    
             );
         }

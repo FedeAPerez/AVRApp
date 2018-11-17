@@ -10,9 +10,11 @@ import Button from '@material-ui/core/Button';
  * */
 import { getInvalidSessions, assignNewSession } from '../../Firebase/Session';
 import {startFetching, finishedFetching} from '../../redux/actions/actions';
+import LoaderContainer from '../../Admin/LoaderContainer';
 import SelectPatientContainer from '../SelectPatientContainer';
 import SelectInvalidSessionContainer from './SelectInvalidSessionContainer';
 import Text from '../../ComponentsLibrary/Text';
+import InformationBox from '../../MaterialLikeComponents/InformationBox';
 
 /* *
  * Hojas de Estilo y Constantes
@@ -147,6 +149,12 @@ class SessionsToRestoreContainer extends Component {
                         </Button>
                     </section>
                 }
+                {
+                    this.state.okAssignmet &&
+                    <InformationBox imageSrc="done">La sesión se asignó correctamente, volvé al menú principal y obtené el reporte de tu paciente.</InformationBox>
+                    
+                }
+                <LoaderContainer />
             </section>
         );
     }
