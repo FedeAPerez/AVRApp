@@ -1,4 +1,3 @@
-
 .topBar {
     background-color: #e74c3c;
     color: white;
@@ -25,4 +24,8 @@
     margin-left: 1.5rem;
     font-weight: 500;
     line-height: 1.5;
+}
+
+.top-bar-image:hover {
+    cursor: pointer;
 }

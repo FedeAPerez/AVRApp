@@ -12,7 +12,7 @@ const TopBar = ({...props, children}) => {
         return (
             <section className="topBar">
                 <span className="top-bar-action" onClick={props.backToAction}>
-                <img src={"/content/images/actions/back.svg"} alt={"Action Top Bar"}/>
+                <img className="top-bar-image" src={"/content/images/actions/back.svg"} alt={"Action Top Bar"}/>
                 <span className="top-bar-action-text">{props.text}</span>
                 </span> 
             </section>
