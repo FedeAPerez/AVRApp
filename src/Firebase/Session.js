@@ -1,5 +1,69 @@
 import * as firebase from 'firebase';
 
+export function assignNewSession(session, patient) {
+    let myInitConfiguation = 
+    { 
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'  
+        },
+    };
+
+    return fetch(process.env.REACT_APP_API_URL.replace(/ /g,'') + '/session/' + session + '/' + patient, myInitConfiguation)
+    .then((res) => {
+            try { 
+                return res.json();
+            }
+            catch(err) {
+                console.log(err);
+                
+            }
+        }, (error) => {
+            return { 
+                hasError : true, errorDescription : error 
+            }
+    })
+    .then((res) => {
+        if(res.hasError) {
+            throw new Error("Fallo al asignar la sesión invalida");
+        } else {
+            return res;
+        }
+    });
+}
+
+export function getInvalidSessions() {
+    let myInitConfiguation = 
+    { 
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'  
+        },
+    };
+
+    return fetch(process.env.REACT_APP_API_URL.replace(/ /g,'') + '/session/status', myInitConfiguation)
+    .then((res) => {
+            try { 
+                return res.json();
+            }
+            catch(err) {
+                console.log(err);
+                
+            }
+        }, (error) => {
+            return { 
+                hasError : true, errorDescription : error 
+            }
+    })
+    .then((res) => {
+        if(res.hasError) {
+            throw new Error("Fallo al cargar las sesiones inválidas");
+        } else {
+        return res.data.listOfSessions;
+        }
+    });
+}
+
 export function getToken(patientId, exerciseId, repetitions) {
     let myInitConfiguation = 
     { 
