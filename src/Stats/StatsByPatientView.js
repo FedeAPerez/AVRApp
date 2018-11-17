@@ -74,7 +74,7 @@ class StatsByPatientView extends Component {
                                         <XAxis dataKey="name"/>
                                         <YAxis/>
                                         <Tooltip/>
-                                        <Area type='monotone' dataKey='uv' stroke='#c0392b' fill='#e74c3c' />
+                                        <Area type='monotone' dataKey='desvios' stroke='#c0392b' fill='#e74c3c' />
                                     </AreaChart>
                                 </ResponsiveContainer>
                                 </section>
